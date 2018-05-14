@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ajla.app_asistencia.Admin_AntesGTGL">
+
+    <TextView
+        android:id="@+id/nombreMateria"
+        android:layout_width="315dp"
+        android:layout_height="134dp"
+        android:text=""
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:onClick="AntesGTGL"
+        android:id="@+id/btnGT"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:text="@string/grupoT"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+    <Button
+        android:onClick="AntesGTGL"
+        android:id="@+id/btnGL"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:text="@string/grupoL"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+
+    <Button
+        android:onClick="AntesGTGL"
+        android:id="@+id/btnGuardadMateria"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:text="@string/guardarOfer"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+</LinearLayout>

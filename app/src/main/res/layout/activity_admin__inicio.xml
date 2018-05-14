@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ajla.app_asistencia.Admin_Inicio">
+
+    <Button
+        android:onClick="prueba"
+        android:id="@+id/btnMateria"
+        android:layout_width="124dp"
+        android:layout_height="88dp"
+        android:text="@string/Buton1"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="80dp" />
+
+    <Button
+        android:onClick="prueba"
+        android:id="@+id/btnMaestro"
+        android:layout_width="124dp"
+        android:layout_height="88dp"
+        android:text="@string/Buton2"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="80dp" />
+
+    <Button
+        android:onClick="prueba"
+        android:id="@+id/btnLocales"
+        android:layout_width="124dp"
+        android:layout_height="88dp"
+        android:text="@string/Buton3"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="80dp" />
+
+    <Button
+        android:onClick="prueba"
+        android:id="@+id/btnAlumno"
+        android:layout_width="124dp"
+        android:layout_height="88dp"
+        android:text="@string/Buton4"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="80dp" />
+    <Button
+        android:onClick="prueba"
+        android:id="@+id/btnArea"
+        android:layout_width="124dp"
+        android:layout_height="88dp"
+        android:text="@string/Buton5"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="80dp" />
+</LinearLayout>
