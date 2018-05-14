@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Alumno_Menu" />
-        <activity android:name=".Alumno_Materia"></activity>
+        <activity android:name=".Alumno_Materia" />
+        <activity android:name=".Alumno_Inscripcion"></activity>
     </application>
 
 </manifest>

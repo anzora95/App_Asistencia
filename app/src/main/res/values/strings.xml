@@ -8,5 +8,6 @@
     <string name="asistencia">Asistencia</string>
     <string name="alumno_label_menu">Alumno</string>
     <string name="swi_remenb">Recordar</string>
+    <string name="btn_inc_materia">Inscribir</string>
 
 </resources>

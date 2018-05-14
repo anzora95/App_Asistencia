@@ -20,7 +20,7 @@
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="78dp" />
     </ScrollView>
@@ -39,7 +39,7 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Button" />
+            android:text="@string/btn_inc_materia" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
