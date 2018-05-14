@@ -9,14 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Admin_Materias_Menu" />
+        <activity android:name=".Admin_Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity_buttom"></activity>
+        <activity android:name=".Admin_Menu_Oferta_Ciclo" />
+        <activity android:name=".Admin_Registro_GL_GT" />
+        <activity android:name=".Admin_Asig_GT" />
+        <activity android:name=".Admin_Asig_GL" />
+        <activity android:name=".Admin_AntesGTGL" />
     </application>
 
 </manifest>

@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">App_Asistencia</string>
+    <string name="Buton2">Maestro</string>
+    <string name="Buton1">Materia</string>
+    <string name="Buton3">Locales</string>
+    <string name="Buton4">Alumno</string>
+    <string name="Buton5">Area</string>
+    <string name="BotonCatalogoMaterias">Catalogo de Materias</string>
+    <string name="BotonOfertaCiclo">Oferta del Ciclo</string>
+    <string name="BotonAsignacionMaterias">Asignacion de Materias</string>
+    <string name="BotonRegistroGLGT">Registro de grupos teoricos y grupos laboratios</string>
+    <string name="grupoT">Grupo Teorico</string>
+    <string name="grupoL">Grupo Laboratorio</string>
+    <string name="guardarOfer">Guardar</string>
+    <string name="GT">GT</string>
+    <string name="DocenteGT">Docente GT</string>
+    <string name="localGT">Local GT</string>
+    <string name="GuardarGT">Guardar</string>
+    <string name="GL">GL</string>
+    <string name="DocenteGL">Docente GL</string>
+    <string name="localGL">Laboratorio</string>
+    <string name="GuardarGL">Guardar</string>
 </resources>

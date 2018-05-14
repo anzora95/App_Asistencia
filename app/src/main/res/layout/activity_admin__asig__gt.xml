@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ajla.app_asistencia.Admin_Asig_GT">
+
+    <TextView
+        android:id="@+id/textViewGT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/GT"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <Spinner
+        android:id="@+id/spinnerGT"
+        android:layout_width="172dp"
+        android:layout_height="49dp"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:id="@+id/textViewDocenteGT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DocenteGT"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <Spinner
+        android:id="@+id/spinnerDocenteGT"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+    <TextView
+        android:id="@+id/textViewLocalGT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/localGT"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="201dp" />
+
+    <Spinner
+        android:id="@+id/spinnerLocalGT"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="201dp" />
+
+    <Button
+        android:onClick="onGT"
+        android:id="@+id/btnGuardarGT"
+        android:layout_width="169dp"
+        android:layout_height="53dp"
+        android:text="@string/GuardarGT"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="402dp" />
+
+</LinearLayout>
