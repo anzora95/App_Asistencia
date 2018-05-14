@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">App_Asistencia</string>
+    <string name="btn_log">Iniciar Sesion</string>
+    <string name="name">Nombre</string>
+    <string name="pass">Contraseña</string>
+    <string name="dife">Diferidos</string>
+    <string name="inscri">Inscripcion</string>
+    <string name="asistencia">Asistencia</string>
+    <string name="alumno_label_menu">Alumno</string>
+    <string name="swi_remenb">Recordar</string>
+
 </resources>
