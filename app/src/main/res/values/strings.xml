@@ -10,4 +10,6 @@
     <string name="swi_remenb">Recordar</string>
     <string name="btn_inc_materia">Inscribir</string>
 
+    <string name="title_activity_jefe_menu">jefeMenu</string>
+    <string name="textview">TextView</string>
 </resources>
