@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"/>
-
-        <activity android:name=".jefeMenu" >
+        <activity android:name=".MainActivity" />
+        <activity android:name=".jefeMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".jefeListDiferidos" />
-        <activity android:name=".jefeDiferido"></activity>
+        <activity android:name=".jefeDiferido" />
+        <activity android:name=".DocenteMenu" />
+        <activity android:name=".DocenteMateria"></activity>
     </application>
 
 </manifest>
