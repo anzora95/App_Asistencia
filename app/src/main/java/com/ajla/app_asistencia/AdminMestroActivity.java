@@ -70,4 +70,10 @@ public class AdminMestroActivity extends AppCompatActivity implements AdapterVie
     private void cancelar(){
         finish();
     }
+
+    public void agregar(View view) {
+        Intent lista = new Intent(AdminMestroActivity.this, MaestroNuevoActivity.class);  //Onda del video
+        startActivity(lista);
+
+    }
 }

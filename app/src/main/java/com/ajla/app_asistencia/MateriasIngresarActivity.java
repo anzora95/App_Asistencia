@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MateriasIngresarActivity extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class MateriasIngresarActivity extends AppCompatActivity {
     }
 
     public void guardar(View view) {
+        Toast.makeText(MateriasIngresarActivity.this,"Guardado con exito",Toast.LENGTH_SHORT).show();
     //    Intent guardar= null;
       //  switch (view.getId()){
         //    case R.id.btnguardar:

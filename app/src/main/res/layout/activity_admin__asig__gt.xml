@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ajla.app_asistencia.Admin_Asig_GT">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp">
+    <TextView
+        android:id="@+id/textViewGT"
+        android:text="@string/GT"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/negro"
+       />
+
+    <Spinner
+        android:id="@+id/spinnerGT"
+        android:layout_width="270dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+       />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+    <TextView
+        android:id="@+id/textViewDocenteGT"
+        android:text="@string/DocenteGT"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/negro"
+      />
+
+    <Spinner
+        android:id="@+id/spinnerDocenteGT"
+        android:layout_width="270dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+    <TextView
+        android:id="@+id/textViewLocalGT"
+        android:text="@string/localGT"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/negro"
+
+         />
+
+    <Spinner
+        android:id="@+id/spinnerLocalGT"
+        android:layout_width="270dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+    <Button
+        android:onClick="onGT"
+        android:id="@+id/btnGuardarGT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrincipalOscuro"
+        android:text="@string/GuardarGT"
+        />
+    </RelativeLayout>
+</LinearLayout>

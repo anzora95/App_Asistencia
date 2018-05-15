@@ -11,18 +11,28 @@
         android:layout_height="wrap_content"
         android:text="@string/listmaterias"
         android:textStyle="bold"
-        android:layout_marginStart="85dp"
+        android:layout_marginStart="95dp"
         android:textSize="25sp"
         android:layout_marginBottom="10dp"
         android:textColor="@color/negro"/>
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
         android:fillViewport="true">
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/listmaterias"></ListView>
     </ScrollView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregarmate"
+        android:textColor="@color/colorPrincipalOscuro"
+        android:textStyle="bold"
+        android:id="@+id/agregarcate"
+        android:onClick="agregar"
+        android:layout_marginStart="135dp"
+        />
 
 </LinearLayout>

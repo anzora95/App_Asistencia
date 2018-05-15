@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo"
+    tools:context="com.ajla.app_asistencia.Admin_AntesGTGL">
+
+    <TextView
+        android:id="@+id/nombreMateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/msjasignaciongrupos"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:textSize="20sp"
+         />
+
+    <Button
+        android:onClick="AntesGTGL"
+        android:id="@+id/btnGT"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:text="@string/grupoT"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:onClick="AntesGTGL"
+        android:id="@+id/btnGL"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:text="@string/grupoL"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <Button
+        android:onClick="AntesGTGL"
+        android:id="@+id/btnGuardadMateria"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:text="@string/guardarOfer"
+        android:layout_marginStart="120dp" />
+
+</LinearLayout>

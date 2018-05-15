@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ajla.app_asistencia.Admin_Asig_GL">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp">
+    <TextView
+        android:id="@+id/textViewGL"
+
+        android:text="@string/GL"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/negro" />
+
+    <Spinner
+        android:id="@+id/spinnerGL"
+        android:layout_width="270dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+    <TextView
+        android:id="@+id/textViewDocenteGL"
+        android:text="@string/DocenteGL"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/negro" />
+
+    <Spinner
+        android:id="@+id/spinnerDocenteGL"
+        android:layout_width="270dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+    <TextView
+        android:id="@+id/textViewLocalGL"
+        android:text="@string/localGL"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/negro"/>
+
+    <Spinner
+        android:id="@+id/spinnerLocalGL"
+        android:layout_width="270dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp">
+
+    <Button
+        android:onClick="onGL"
+        android:id="@+id/btnGuardarGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrincipalOscuro"
+        android:text="@string/GuardarGL"
+         />
+    </RelativeLayout>
+
+</LinearLayout>

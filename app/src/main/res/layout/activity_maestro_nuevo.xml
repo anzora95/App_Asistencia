@@ -2,33 +2,125 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".MaestroNuevoActivity">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nuevocatedratico"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="30dp"
+        android:text="@string/msjingresomdoce"
         android:textColor="@color/negro"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:textAlignment="center"/>
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="@string/isss"
+            android:textColor="@color/negro"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/isss"
+            android:layout_width="270dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/fondo"
+            android:hint="Ej.546789091" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="@string/nomdoceingreso"
+            android:textColor="@color/negro"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/nomdoce"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/fondo"
+            android:hint="Ej.Eduardo José" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="@string/apedoceingreso"
+            android:textColor="@color/negro"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/apedoce"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/fondo"
+            android:hint="Recinos Galdamez" />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="@string/contradoce"
+                android:textColor="@color/negro"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/contradoce"
+                android:layout_width="270dp"
+                android:layout_height="34dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/fondo"
+                android:hint="Ej.XXXXXXXXX" />
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/isss"
-            />
-        <EditText
-            android:layout_width="6dp"
-            android:layout_height="3dp"
-            android:id="@+id/isss"/>
 
-    </RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4sp"
+            android:layout_marginStart="150dp"
+            android:text="@string/guardar"
+            android:onClick="guardar"/>
+    </LinearLayout>
 
 </LinearLayout>

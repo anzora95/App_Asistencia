@@ -17,14 +17,24 @@
             android:layout_marginBottom="10dp"
             android:textColor="@color/negro"/>
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
         android:fillViewport="true">
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/listmaestros"></ListView>
     </ScrollView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregarcate"
+        android:textColor="@color/colorPrincipalOscuro"
+        android:textStyle="bold"
+        android:id="@+id/agregarcate"
+        android:onClick="agregar"
+        android:layout_marginStart="130dp"
+        />
 
 
 

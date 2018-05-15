@@ -1,13 +1,14 @@
 package com.ajla.app_asistencia;
 
-
 import android.content.Context;
+import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.ajla.app_asistencia.utilidades.Utilidades;
 
-public class ConexionSQLiteHelper extends SQLiteOpenHelper {
+
+public class ConexionSQLiteHelper extends SQLiteOpenHelper{
 
 
     public ConexionSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -22,7 +23,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAntigua, int VersionNueva) {
-        db.execSQL("DROP TABLE IF EXISTS alumno");
-        onCreate(db);
+       db.execSQL("DROP TABLE IF EXISTS alumno");
+       onCreate(db);
     }
 }

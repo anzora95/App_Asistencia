@@ -1,0 +1,68 @@
+package com.ajla.app_asistencia;
+
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
+import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.*;
+                                                           //Onda del video que me dio error
+public class Admin_Registro_GL_GT extends AppCompatActivity implements ListView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+
+    private ListView listMateriasCiclo; //Onda del video
+    private String datos[]={"IAI Introduccion a la Informatica","PDM Programacion para disporitivos moviles","HDP Herramientas de Productividad","a","b","c","d","","","","","","","",""};
+    //Onda del video
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_admin__registro__gl__gt);
+
+        listMateriasCiclo = (ListView) findViewById(R.id.listMateriasCiclo); //Onda del video
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,datos); //Onda del video
+        listMateriasCiclo.setOnItemClickListener(this); //Onda del video
+        listMateriasCiclo.setOnItemLongClickListener(this);
+        listMateriasCiclo.setAdapter(adaptador); //Onda del video
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) { //Onda creada por una cosa que me dio error arriba
+      String valor= (String) parent.getItemAtPosition(position); //Onda del video
+      Intent nuevoFormXD = new Intent(Admin_Registro_GL_GT.this, Admin_AntesGTGL.class);  //Onda del video
+      nuevoFormXD.putExtra("Materias",valor);
+      startActivity(nuevoFormXD);
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        AlertDialog.Builder DialogoAlerta= new AlertDialog.Builder(this);
+        DialogoAlerta.setTitle("ELIMINAR OFERTA CICLO");
+        DialogoAlerta.setMessage("¿Realmente desea eliminiar esta oferta ciclo?");
+        DialogoAlerta.setCancelable(false);
+        DialogoAlerta.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            aceptar();
+            }
+        });
+        DialogoAlerta.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            cancelar();
+            }
+        });
+        DialogoAlerta.show();
+        return true;
+    }
+
+    private void aceptar() {
+        Toast.makeText(this,"FUNCION SIIII~",Toast.LENGTH_SHORT).show();
+    }
+
+    private void cancelar(){
+        finish();
+    }
+}
