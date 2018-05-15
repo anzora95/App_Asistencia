@@ -12,11 +12,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Admin_Materias_Menu" />
         <activity android:name=".Admin_Inicio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Alumno_Menu" />
         <activity android:name=".Alumno_Materia" />
@@ -28,6 +24,13 @@
         <activity android:name=".Admin_Asig_GT" />
         <activity android:name=".Admin_Asig_GL" />
         <activity android:name=".Admin_AntesGTGL" />
+        <activity android:name=".jefeMenu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
