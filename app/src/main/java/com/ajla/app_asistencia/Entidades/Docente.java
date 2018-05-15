@@ -10,11 +10,21 @@ public class Docente implements Serializable{
     private Character isss;
     private String nom_doce;
     private String ape_doce;
+    private Integer contra_doce;
 
-    public Docente(Character isss, String nom_doce, String ape_doce) {
+    public Docente(Character isss, String nom_doce, String ape_doce, Integer contra_doce) {
         this.isss = isss;
         this.nom_doce = nom_doce;
         this.ape_doce = ape_doce;
+        this.contra_doce = contra_doce;
+    }
+
+    public Integer getContra_doce() {
+        return contra_doce;
+    }
+
+    public void setContra_doce(Integer contra_doce) {
+        this.contra_doce = contra_doce;
     }
 
     public Character getIsss() {

@@ -9,9 +9,11 @@ import java.sql.Date;
 
 public class Asis_Teo implements Serializable{
     private Date fecha_teo;
+    private Integer id_ofer_teo;
 
-    public Asis_Teo(Date fecha_teo) {
+    public Asis_Teo(Date fecha_teo, Integer id_ofer_teo) {
         this.fecha_teo = fecha_teo;
+        this.id_ofer_teo = id_ofer_teo;
     }
 
     public Date getFecha_teo() {
@@ -20,5 +22,13 @@ public class Asis_Teo implements Serializable{
 
     public void setFecha_teo(Date fecha_teo) {
         this.fecha_teo = fecha_teo;
+    }
+
+    public Integer getId_ofer_teo() {
+        return id_ofer_teo;
+    }
+
+    public void setId_ofer_teo(Integer id_ofer_teo) {
+        this.id_ofer_teo = id_ofer_teo;
     }
 }

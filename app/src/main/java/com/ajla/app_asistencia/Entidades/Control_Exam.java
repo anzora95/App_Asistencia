@@ -10,9 +10,13 @@ import java.sql.Date;
 public class Control_Exam implements Serializable{
 
     private Date fecha_examen;
+    private Character carnet;
+    private Character asistencia;
 
-    public Control_Exam(Date fecha_examen) {
+    public Control_Exam(Date fecha_examen, Character carnet, Character asistencia) {
         this.fecha_examen = fecha_examen;
+        this.carnet = carnet;
+        this.asistencia = asistencia;
     }
 
     public Date getFecha_examen() {
@@ -21,5 +25,21 @@ public class Control_Exam implements Serializable{
 
     public void setFecha_examen(Date fecha_examen) {
         this.fecha_examen = fecha_examen;
+    }
+
+    public Character getCarnet() {
+        return carnet;
+    }
+
+    public void setCarnet(Character carnet) {
+        this.carnet = carnet;
+    }
+
+    public Character getAsistencia() {
+        return asistencia;
+    }
+
+    public void setAsistencia(Character asistencia) {
+        this.asistencia = asistencia;
     }
 }
