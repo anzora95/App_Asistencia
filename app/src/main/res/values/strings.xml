@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">App_Asistencia</string>
+    <string name="listmaestros">Listado De Catedráticos</string>
+    <string name="nuevocatedratico">Formulario para nuevo catedrático</string>
+    <string name="isss">ISSS</string>
+    <string name="listmaterias">Lista de Materias</string>
+    <string name="msjingresomaterias">Ingreso de Nueva Materia</string>
+    <string name="codmateria">Codigo de Materia</string>
+    <string name="nommateria">Nombre de Materia</string>
+    <string name="area">Departamento</string>
+    <string name="guardar">Guardar</string>
 </resources>

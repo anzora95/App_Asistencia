@@ -16,7 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdminMateriasCatalogoActivity"></activity>
+        <activity android:name=".AdminMateriasCatalogoActivity" />
+        <activity android:name=".AdminMestroActivity" />
+        <activity android:name=".MaestroNuevoActivity" />
+        <activity android:name=".MateriasMenuActivity" />
+        <activity android:name=".MateriasIngresarActivity" />
+        <activity android:name=".AsignacionMateriasActivity"></activity>
     </application>
 
 </manifest>
