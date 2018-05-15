@@ -9,28 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Admin_Materias_Menu" />
-        <activity android:name=".Admin_Inicio">
-
-        </activity>
-        <activity android:name=".Alumno_Menu" />
-        <activity android:name=".Alumno_Materia" />
-        <activity android:name=".Alumno_Inscripcion"></activity>
-        <activity android:name=".jefeListDiferidos" />
-        <activity android:name=".jefeDiferido"></activity>
-        <activity android:name=".Admin_Menu_Oferta_Ciclo" />
-        <activity android:name=".Admin_Registro_GL_GT" />
-        <activity android:name=".Admin_Asig_GT" />
-        <activity android:name=".Admin_Asig_GL" />
-        <activity android:name=".Admin_AntesGTGL" />
-        <activity android:name=".jefeMenu">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Admin_Materias_Menu" />
+        <activity android:name=".Admin_Inicio" />
+        <activity android:name=".Alumno_Menu" />
+        <activity android:name=".Alumno_Materia" />
+        <activity android:name=".Alumno_Inscripcion" />
+        <activity android:name=".jefeListDiferidos" />
+        <activity android:name=".jefeDiferido" />
+        <activity android:name=".Admin_Menu_Oferta_Ciclo" />
+        <activity android:name=".Admin_Registro_GL_GT" />
+        <activity android:name=".Admin_Asig_GT" />
+        <activity android:name=".Admin_Asig_GL" />
+        <activity android:name=".Admin_AntesGTGL" />
+        <activity android:name=".jefeMenu" />
+        <activity android:name=".Alumno_diferido" />
+        <activity android:name=".Alumno_Asistencia"></activity>
     </application>
 
 </manifest>

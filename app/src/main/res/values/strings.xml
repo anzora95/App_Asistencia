@@ -32,4 +32,12 @@
     <string name="DocenteGL">Docente GL</string>
     <string name="localGL">Laboratorio</string>
     <string name="GuardarGL">Guardar</string>
+    <string name="btn_inscri_alumn">Completo</string>
+    <string name="label_Nmbr_dif">Nombre</string>
+    <string name="label_dif_materia">Materia</string>
+    <string name="label_dif_gt">GT</string>
+    <string name="label_dif_gd">GD</string>
+    <string name="label_dif_fecha">Fecha</string>
+    <string name="label_dif_motivo">Motivo</string>
+    <string name="btn_dif_enviar">Enviar</string>
 </resources>
