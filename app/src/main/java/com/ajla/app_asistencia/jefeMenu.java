@@ -20,11 +20,23 @@ public class jefeMenu extends AppCompatActivity implements ListView.OnItemClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jefe_menu);
-        texto=(TextView)findViewById(R.id.textView);
+        texto=findViewById(R.id.textView);
+        listam=(ListView) findViewById(R.id.listm);
 
-        listam=(ListView) findViewById(R.id.llistm);
-//dastos de la lista
+
+
+//datos de la lista
         List<String> materias = new ArrayList<String>();
+        materias.add("Matematicas 1");
+        materias.add("psicologia Social");
+        materias.add("introduccion a la informatica");
+        materias.add("Fisica 1");
+        materias.add("metodos experiementales");
+        materias.add("Matematicas 1");
+        materias.add("psicologia Social");
+        materias.add("introduccion a la informatica");
+        materias.add("Fisica 1");
+        materias.add("metodos experiementales");
         materias.add("Matematicas 1");
         materias.add("psicologia Social");
         materias.add("introduccion a la informatica");

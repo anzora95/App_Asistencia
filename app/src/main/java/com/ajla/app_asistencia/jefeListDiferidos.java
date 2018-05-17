@@ -19,14 +19,14 @@ public class jefeListDiferidos extends AppCompatActivity implements ListView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jefe_list_diferidos);
 
-        listadif = (ListView) findViewById(R.id.llistdif);
+        listadif = (ListView) findViewById(R.id.listadif);
 //dastos de la lista
         List<String> diferidos = new ArrayList<String>();
-        diferidos.add("1");
-        diferidos.add("2");
-        diferidos.add("3");
-        diferidos.add("4");
-        diferidos.add("5");
+        diferidos.add("dif 1");
+        diferidos.add("dif 2");
+        diferidos.add("dif 3");
+        diferidos.add("dif 4");
+        diferidos.add("dif 5");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, diferidos);
         listadif.setOnItemClickListener(this);

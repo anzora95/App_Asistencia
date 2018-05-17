@@ -2,4 +2,27 @@
     <string name="app_name">App_Asistencia</string>
     <string name="title_activity_jefe_menu">jefeMenu</string>
     <string name="textview">TextView</string>
+    <string name="TituloListaMaterias">Lista de Materias</string>
+    <string name="TituloListaDiferidos">Lista de Diferidos</string>
+    <string name="motivo">Motivo</string>
+    <string name="botonaceptar">Aceptar</string>
+    <string name="botondenegar">Denegar</string>
+    <string name="Textogruposteoricos">Grupos Teoricos </string>
+    <string name="Textogruposlaboratorio">Grupos de Laboratorio </string>
+    <string name="Textoevaluaciones">Evaluaciones </string>
+    <string name="Textoegt">Grupos Teoricos </string>
+    <string name="Textoegl">Grupos de Laboratorio </string>
+    <string name="evaluaciones">Evaluaciones </string>
+    <string name="editnombre">Nombre</string>
+    <string name="editmateria">Materia</string>
+    <string name="editmotivo">Motivo</string>
+    <color name="background"></color>
+    <string name="botonasignarevaluacion">asignar evaluacion pal coordinador</string>
+    <string name="textoevaluacion">evaluacion</string>
+    <string name="edittextonumevaluaciones">evaluacion numero</string>
+    <string name="textofecha">fecha</string>
+    <string name="botonguardar">guardar</string>
+    <string name="btnasistencia">pasar asistencia</string>
+
+
 </resources>

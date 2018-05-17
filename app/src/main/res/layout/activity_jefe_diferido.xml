@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.ajla.app_asistencia.jefeDiferido">
 
     <EditText
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nombre" />
+        android:text="@string/editnombre" />
 
     <EditText
         android:id="@+id/idMateria"
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Materia"
+        android:text="@string/editmateria"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="69dp" />
 
@@ -30,24 +31,26 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Motivo"
+        android:text="@string/motivo"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="156dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aprobar"
+        android:text="@string/botonaceptar"
         tools:layout_editor_absoluteX="16dp"
+        android:onClick="onClick"
         tools:layout_editor_absoluteY="304dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/denegar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Denegar"
+        android:text="@string/botondenegar"
+        android:onClick="onClick"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="371dp" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

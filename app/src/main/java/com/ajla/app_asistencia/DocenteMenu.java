@@ -18,26 +18,47 @@ public class DocenteMenu extends AppCompatActivity implements ListView.OnItemCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_menu);
-        listamaterias = (ListView) findViewById(R.id.listamaterias);
+        listamaterias=(ListView) findViewById(R.id.listamaterias);
+
         List<String> materias = new ArrayList<String>();
         materias.add("Matematicas 1");
         materias.add("psicologia Social");
         materias.add("introduccion a la informatica");
         materias.add("Fisica 1");
         materias.add("metodos experiementales");
+        materias.add("introduccion a la informatica");
+        materias.add("Fisica 1");
+        materias.add("metodos experiementales");
+        materias.add("introduccion a la informatica");
+        materias.add("Fisica 1");
+        materias.add("metodos experiementales");
+        materias.add("introduccion a la informatica");
+        materias.add("Fisica 1");
+        materias.add("metodos experiementales");
+        materias.add("introduccion a la informatica");
+        materias.add("Fisica 1");
+        materias.add("metodos experiementales");
+        materias.add("Matematicas 1");
+        materias.add("psicologia Social");
+        materias.add("introduccion a la informatica");
+        materias.add("Fisica 1");
+        materias.add("metodos experiementales");
+        materias.add("introduccion a la informatica");
+        materias.add("Fisica 1");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, materias);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,materias);
         listamaterias.setOnItemClickListener(this);
         listamaterias.setAdapter(adapter);
 
 
     }
 
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String valor = (String) parent.getItemAtPosition(position);
-        Intent nuevoformulario = new Intent(DocenteMenu.this, DocenteMateria.class);
-        nuevoformulario.putExtra("Materias", valor);
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id ){
+        String valor= (String) parent.getItemAtPosition(position);
+        Intent nuevoformulario= new Intent(DocenteMenu.this,DocenteMateria.class);
+        nuevoformulario.putExtra("Materias",valor);
         startActivity(nuevoformulario);
+
 
     }
 }
