@@ -29,7 +29,7 @@ public class Alumno_Asistencia extends AppCompatActivity {
         ls=new ArrayList();
         for(int i=0;i<=4;i++){
 
-            ls.add("Materia"+i);
+            ls.add("Materias"+i);
         }
 
         //---------------------------------------------------------------
