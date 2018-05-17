@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AdminMaestroActualizarActivity"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:stretchColumns="1"
+        >
+    <TableRow android:layout_marginTop="30dp">
+        <TextView android:text="@string/isss" />
+        <EditText
+            android:id="@+id/editisss"
+            android:inputType="text"
+            android:maxLength="7" />
+    </TableRow>
+    <TableRow>
+    <TextView android:text="@string/nomdoceingreso" />
+        <EditText
+            android:id="@+id/editNombre"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/apedoceingreso" />
+        <EditText
+            android:id="@+id/editApellido"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/contradoce" />
+        <EditText
+            android:id="@+id/editContraseña"
+            android:inputType="text"
+            android:maxLength="1" />
+    </TableRow>
+    </TableLayout>
+
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="130dp"
+            android:onClick="editdocente"
+            android:textColor="@color/colorPrincipal"
+            android:textStyle="bold"
+            android:text="@string/guardar" />
+
+
+</LinearLayout>

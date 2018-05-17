@@ -7,19 +7,19 @@ import java.io.Serializable;
  */
 
 public class Materia implements Serializable{
- private Character cod_materia;
+ private String cod_materia;
  private String nom_materia;
 
-    public Materia(Character cod_materia, String nom_materia) {
+    public Materia(String cod_materia, String nom_materia) {
         this.cod_materia = cod_materia;
         this.nom_materia = nom_materia;
     }
 
-    public Character getCod_materia() {
+    public String getCod_materia() {
         return cod_materia;
     }
 
-    public void setCod_materia(Character cod_materia) {
+    public void setCod_materia(String cod_materia) {
         this.cod_materia = cod_materia;
     }
 

@@ -1,7 +1,10 @@
 package com.ajla.app_asistencia;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,56 +14,102 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class AdminMateriasCatalogoActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
-    private ListView listMaterias; //Onda del video
-    private String datos[] = {"IAI Introduccion a la Informatica", "PDM Programacion para disporitivos moviles", "HDP Herramientas de Productividad", "a", "b", "c", "d", "", "", "", "", "", "", "", ""};
 
+import com.ajla.app_asistencia.Entidades.Materia;
+
+import java.util.ArrayList;
+
+public class AdminMateriasCatalogoActivity extends AppCompatActivity {
+    ListView listViewmaterias;
+    ConexionSQLiteHelper conec;
+    ArrayList<String> lmateinfo;
+    ArrayList<Materia> listamaterias;
     //Onda del video
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_materias_catalogo);
-        listMaterias = (ListView) findViewById(R.id.listmaterias); //Onda del video
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, datos); //Onda del video
-        listMaterias.setOnItemClickListener(this); //Onda del video
-        listMaterias.setOnItemLongClickListener(this);
-        listMaterias.setAdapter(adaptador); //Onda del video
 
+        conec= new ConexionSQLiteHelper(getApplicationContext());
 
-    }
+        listViewmaterias = (ListView) findViewById(R.id.listmaterias);
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        String valor = (String) adapterView.getItemAtPosition(i); //Onda del video
-        Intent lista = new Intent(AdminMateriasCatalogoActivity.this, MateriasIngresarActivity.class);  //Onda del video
-        lista.putExtra("Materias", valor);
-        startActivity(lista);
+        consultarlistamaterias();
 
-    }
-
-    @Override
-    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-        AlertDialog.Builder DialogoAlerta = new AlertDialog.Builder(this);
-        DialogoAlerta.setTitle("ELIMINAR MATERIA");
-        DialogoAlerta.setMessage("¿Realmente desea eliminiar esta materia?");
-        DialogoAlerta.setCancelable(false);
-        DialogoAlerta.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
-
-
+        ArrayAdapter adaptado= new ArrayAdapter(this,android.R.layout.simple_list_item_1,lmateinfo);
+        listViewmaterias.setAdapter(adaptado);
+        listViewmaterias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                aceptar();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String valor = (String) adapterView.getItemAtPosition(i); //Onda del video
+                Intent lista = new Intent(AdminMateriasCatalogoActivity.this, MateriasIngresarActivity.class);  //Onda del video
+                lista.putExtra("Materias", valor);
+                startActivity(lista);
+
             }
         });
-        DialogoAlerta.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+
+        listViewmaterias.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                cancelar();
+           public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Context context = AdminMateriasCatalogoActivity.this;
+                AlertDialog.Builder DialogoAlerta = new AlertDialog.Builder(context);
+                DialogoAlerta.setTitle("ELIMINAR MATERIA");
+                DialogoAlerta.setMessage("¿Realmente desea eliminiar esta materia?");
+                DialogoAlerta.setCancelable(false);
+
+
+                DialogoAlerta.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        aceptar();
+                    }
+                });
+                DialogoAlerta.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        cancelar();
+                    }
+                });
+                DialogoAlerta.show();
+                return true;
             }
         });
-        DialogoAlerta.show();
-        return true;
+
     }
+
+    private void consultarlistamaterias() {
+
+        SQLiteDatabase db=conec.getReadableDatabase();
+
+        Materia materia=null;
+        listamaterias = new ArrayList<Materia>();
+        Cursor cursor=db.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_MATERIA,null);
+
+        while(cursor.moveToNext()){
+            materia= new Materia(null,null);
+            materia.setCod_materia(cursor.getString(0));
+            materia.setNom_materia(cursor.getString(2));
+
+
+            listamaterias.add(materia);
+
+        }
+        obtenerlista();
+
+    }
+
+    private void obtenerlista() {
+
+        lmateinfo=new ArrayList<String>();
+
+        for(int i=0; i<listamaterias.size();i++)
+        {
+            lmateinfo.add(listamaterias.get(i).getCod_materia()+"   "+listamaterias.get(i).getNom_materia());
+        }
+    }
+
 
     private void aceptar() {
         Toast.makeText(this, "FUNCIONA SIIII~", Toast.LENGTH_SHORT).show();
