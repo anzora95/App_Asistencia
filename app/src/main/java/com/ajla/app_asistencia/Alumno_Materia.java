@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,33 +25,36 @@ public class Alumno_Materia extends AppCompatActivity {
     Button btn_alumMat_inscri;
     List <Item_Materia> materias;
     ListView lv_Materia;
-    Materia_Adapter matAdapter;
-    boolean checkInscri=false;
+   // Materia_Adapter matAdapter;
+   // boolean checkInscri=false;
 
+
+    //private ListView listaalumno;
+    ArrayList<String> itemseleccionados=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alumno__materia);
+        setContentView(R.layout.activity_docente_asistenciaeva);
+        ListView chl = (ListView) findViewById(R.id.chek_ls);
+        chl.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        String[] item = {"Alejandra Campos", "Andres MC", "Nathaly MC", "Eliana RM", "Nehemias M"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Alumno_Materia.this, R.layout.rowlayout,item);
 
-        lv_Materia=findViewById(R.id.lv_Materia);
-        btn_alumMat_inscri=findViewById(R.id.btn_alumMat_inscri);
+        chl.setAdapter(adapter);
 
-        initMaterias();
-        matAdapter=new Materia_Adapter(Alumno_Materia.this,materias,R.layout.item_materia);
-        lv_Materia.setAdapter(matAdapter);
-
-        btn_alumMat_inscri.setOnClickListener(new View.OnClickListener() {
+        chl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent inte_Ins= new Intent(Alumno_Materia.this, Alumno_Inscripcion.class);
-                startActivity(inte_Ins);
+            public void onItemClick(AdapterView<?> parent, View view, int posicion, long id) {
+                String itemsseleccionados = ((TextView) view).getText().toString();
+                if (itemseleccionados.contains(itemseleccionados)) {
+                    itemseleccionados.remove(itemseleccionados);
+                } else itemseleccionados.add(itemsseleccionados);
+
             }
         });
-
-
-
     }
+
 
     private void initMaterias(){
 
