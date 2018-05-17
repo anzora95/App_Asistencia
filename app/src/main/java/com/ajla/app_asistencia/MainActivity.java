@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent inte_inicio = new Intent(MainActivity.this,Admin_Inicio.class);
+               Intent inte_inicio = new Intent(MainActivity.this,Alumno_Menu.class);
+               inte_inicio.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                startActivity(inte_inicio);
             }
         });

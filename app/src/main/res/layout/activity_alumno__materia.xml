@@ -6,40 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".Alumno_Materia">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <Button
+        android:id="@+id/btn_alumMat_inscri"
         android:layout_width="0dp"
-        android:layout_height="452dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="59dp"
+        android:text="@string/btn_inc_materia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/lv_Materia"
+        android:layout_width="0dp"
+        android:layout_height="454dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="78dp" />
-    </ScrollView>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="1.0">
-
-        <Button
-            android:id="@+id/btn_alumMat_inscri"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btn_inc_materia" />
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

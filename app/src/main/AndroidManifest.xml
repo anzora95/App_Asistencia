@@ -19,8 +19,10 @@
         <activity android:name=".Admin_Materias_Menu" />
         <activity android:name=".Admin_Inicio" />
         <activity android:name=".Alumno_Menu" />
-        <activity android:name=".Alumno_Materia" />
-        <activity android:name=".Alumno_Inscripcion" />
+        <activity android:name=".Alumno_Materia"
+            android:parentActivityName=".Alumno_Menu"/>
+        <activity android:name=".Alumno_Inscripcion"
+            android:parentActivityName=".Alumno_Materia"/>
         <activity android:name=".jefeListDiferidos" />
         <activity android:name=".jefeDiferido" />
         <activity android:name=".Admin_Menu_Oferta_Ciclo" />
@@ -29,8 +31,10 @@
         <activity android:name=".Admin_Asig_GL" />
         <activity android:name=".Admin_AntesGTGL" />
         <activity android:name=".jefeMenu" />
-        <activity android:name=".Alumno_diferido" />
-        <activity android:name=".Alumno_Asistencia"></activity>
+        <activity android:name=".Alumno_diferido"
+            android:parentActivityName=".Alumno_Menu"/>
+        <activity android:name=".Alumno_Asistencia"
+            android:parentActivityName=".Alumno_Menu"/>
     </application>
 
 </manifest>

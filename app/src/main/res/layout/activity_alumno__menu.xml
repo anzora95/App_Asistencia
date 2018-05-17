@@ -7,7 +7,7 @@
     tools:context=".Alumno_Menu">
 
     <Button
-        android:id="@+id/ btn_asist_alumenu"
+        android:id="@+id/btn_asist_alumenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <Button
-        android:id="@+id/btn_dif"
+        android:id="@+id/btn_dif_alumen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
