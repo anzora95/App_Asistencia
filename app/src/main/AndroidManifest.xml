@@ -30,11 +30,7 @@
         <activity android:name=".DocenteMateria" />
         <activity android:name=".DocenteAsistenciaGT" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".DocenteEvaluacion" />
         <activity android:name=".DocenteAsistenciaGL" />
@@ -50,7 +46,9 @@
         <activity android:name=".Admin_Asig_GT" />
         <activity android:name=".Admin_Asig_GL" />
         <activity android:name=".Admin_AntesGTGL" />
-        <activity android:name=".AdminAlumnoActivity"></activity>
+        <activity android:name=".AdminAlumnoActivity" />
+        <activity android:name=".AdminMaestroActualizarActivity"></activity>
+
         <activity android:name=".jefeMenu" />
         <activity android:name=".Alumno_diferido"
             android:parentActivityName=".Alumno_Menu"/>

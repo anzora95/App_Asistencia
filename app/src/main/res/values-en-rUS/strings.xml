@@ -1,2 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">App_Asistencia</string>
+    <string name="listmaestros">List of professors</string>
+    <string name="nuevocatedratico">Form for new professor</string>
+    <string name="isss">ISSS</string>
+    <string name="listmaterias">List of matters</string>
+    <string name="msjingresomaterias">Entry of new subject matter</string>
+    <string name="codmateria">Code matter</string>
+    <string name="nommateria">Name of subject</string>
+    <string name="area">Department</string>
+    <string name="guardar">Save</string>
+    <string name="BotonCatalogoMaterias">Catalogue of subjects</string>
+    <string name="BotonOfertaCiclo">Cycle offer</string>
+    <string name="Buton2">Master</string>
+    <string name="Buton1">Matter</string>
+    <string name="Buton3">Locals</string>
+    <string name="Buton4">Student</string>
+    <string name="Buton5">Department</string>
+    <string name="BotonAsignacionMaterias">Assigning Subjects</string>
+    <string name="BotonRegistroGLGT">Registration of theoretical groups and laboratory groups</string>
+    <string name="grupoT">Theoretical group</string>
+    <string name="grupoL">Laboratory group</string>
+    <string name="guardarOfer">Save</string>
+    <string name="GT">GT</string>
+    <string name="DocenteGT">Teacher GT</string>
+    <string name="localGT">Locals GT</string>
+    <string name="GuardarGT">Save</string>
+    <string name="GL">GL</string>
+    <string name="DocenteGL">Teacher GT</string>
+    <string name="localGL">Laboratory</string>
+    <string name="GuardarGL">Save</string>
+    <string name="nomdoceingreso">Name</string>
+    <string name="msjingresomdoce">Admission of new professor</string>
+    <string name="apedoceingreso">Last Name</string>
+    <string name="contradoce">Password</string>
+    <string name="msjasignaciongrupos">Select the type of groups to create</string>
+    <string name="agregarcate">+Add</string>
+    <string name="agregarmate">+Add</string>
+    <string name="adminasignacion">Select inly the subjects that will be available in this cycle</string>
+    <string name="msjbienvenidaadmin">Welcome administrator</string>
+</resources>

@@ -1,2 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">App_Asistencia</string>
+    <string name="isss">ISSS</string>
+    <string name="listmaestros">Elenco Insegnanti</string>
+    <string name="nuevocatedratico">Modulo per nuovo professore</string>
+    <string name="listmaterias">Elenco dei soggetti</string>
+    <string name="msjingresomaterias">IInserimento di nuovo materiale</string>
+    <string name="codmateria">Argomento Codice</string>
+    <string name="nommateria">Nome soggetto</string>
+    <string name="area">Reparto</string>
+    <string name="guardar">Salvare</string>
+    <string name="BotonCatalogoMaterias">Catalogo di soggetti</string>
+    <string name="BotonOfertaCiclo">Offerta cicli</string>
+    <string name="Buton2">Master</string>
+    <string name="Buton1">Oggetto</string>
+    <string name="Buton3">Premesse</string>
+    <string name="Buton4">Studente</string>
+    <string name="Buton5">Dipartimento</string>
+    <string name="BotonAsignacionMaterias">Assegnazione del soggetto</string>
+    <string name="BotonRegistroGLGT">Registrazione dei gruppi teorici e dei gruppi di laboratorio</string>
+    <string name="grupoT">Gruppi teorici</string>
+    <string name="grupoL">Gruppi di laboratorio</string>
+    <string name="guardarOfer">Salvare</string>
+    <string name="GT">GT</string>
+    <string name="DocenteGT">Insegnante GT</string>
+    <string name="localGT">Premesse</string>
+    <string name="GuardarGT">Salvare</string>
+    <string name="GL">GL</string>
+    <string name="DocenteGL">Insegnante GT</string>
+    <string name="localGL">Laboratorio</string>
+    <string name="GuardarGL">Salaver</string>
+    <string name="nomdoceingreso">Nome</string>
+    <string name="msjingresomdoce">Ammissione di nuovo professore</string>
+    <string name="apedoceingreso">Cognome</string>
+    <string name="contradoce">Dati password</string>
+    <string name="msjasignaciongrupos">Selezionare il tipo di gruppi da creare</string>
+    <string name="agregarcate">+Aggiunta</string>
+    <string name="agregarmate">+Aggiunta</string>
+    <string name="adminasignacion">Selezionare solo i soggetti che saranno disponibili in questo ciclo</string>
+    <string name="msjbienvenidaadmin">Amministratore benvenuto</string>
+</resources>
