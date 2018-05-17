@@ -11,6 +11,7 @@ public class Administrador implements Serializable{
     private String contraseaña;
 
 
+
     public Administrador(Character usuario, String contraseaña) {
         this.usuario = usuario;
         this.contraseaña = contraseaña;

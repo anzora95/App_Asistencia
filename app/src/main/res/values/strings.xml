@@ -41,6 +41,7 @@
     <string name="DocenteGL">Docente GL</string>
     <string name="localGL">Laboratorio</string>
     <string name="GuardarGL">Guardar</string>
+    <string name="AgregarOferta">Agregar Oferta</string>
     <string name="btn_inscri_alumn">Completo</string>
     <string name="label_Nmbr_dif">Nombre</string>
     <string name="label_dif_materia">Materia</string>

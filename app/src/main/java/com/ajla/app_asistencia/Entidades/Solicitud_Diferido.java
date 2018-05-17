@@ -1,6 +1,7 @@
 package com.ajla.app_asistencia.Entidades;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * Created by Gloria Maria on 14/5/2018.
@@ -9,10 +10,18 @@ import java.io.Serializable;
 public class Solicitud_Diferido implements Serializable{
 
  private Integer id_solicitud;
- private Character estado;
+ private Character carnet;
+ private Character isss;
+ private Character periodo;
+ private Date fecha_examen;
+ private String  estado;
 
-    public Solicitud_Diferido(Integer id_solicitud, Character estado) {
+    public Solicitud_Diferido(Integer id_solicitud, Character carnet, Character isss, Character periodo, Date fecha_examen, String estado) {
         this.id_solicitud = id_solicitud;
+        this.carnet = carnet;
+        this.isss = isss;
+        this.periodo = periodo;
+        this.fecha_examen = fecha_examen;
         this.estado = estado;
     }
 
@@ -24,11 +33,43 @@ public class Solicitud_Diferido implements Serializable{
         this.id_solicitud = id_solicitud;
     }
 
-    public Character getEstado() {
+    public Character getCarnet() {
+        return carnet;
+    }
+
+    public void setCarnet(Character carnet) {
+        this.carnet = carnet;
+    }
+
+    public Character getIsss() {
+        return isss;
+    }
+
+    public void setIsss(Character isss) {
+        this.isss = isss;
+    }
+
+    public Character getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(Character periodo) {
+        this.periodo = periodo;
+    }
+
+    public Date getFecha_examen() {
+        return fecha_examen;
+    }
+
+    public void setFecha_examen(Date fecha_examen) {
+        this.fecha_examen = fecha_examen;
+    }
+
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(Character estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 }

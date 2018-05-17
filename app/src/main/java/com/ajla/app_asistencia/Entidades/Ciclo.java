@@ -11,4 +11,24 @@ public class Ciclo implements Serializable{
     private String ciclo_anio;
     private String estado;
 
+    public Ciclo(String ciclo_anio, String estado) {
+        this.ciclo_anio = ciclo_anio;
+        this.estado = estado;
+    }
+
+    public String getCiclo_anio() {
+        return ciclo_anio;
+    }
+
+    public void setCiclo_anio(String ciclo_anio) {
+        this.ciclo_anio = ciclo_anio;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 }

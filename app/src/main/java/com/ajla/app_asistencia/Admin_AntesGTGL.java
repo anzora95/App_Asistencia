@@ -8,17 +8,12 @@ import android.widget.TextView;
 
 public class Admin_AntesGTGL extends AppCompatActivity {
 
-    private TextView nombreMateria; //Onda del video
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin__antes_gtgl);
-        nombreMateria=(TextView) findViewById(R.id.nombreMateria); //Onda del video
-        Bundle parametrosXD =  getIntent().getExtras();
-        if (parametrosXD != null){
 
-            nombreMateria.setText(parametrosXD.getString("Materias"));
-        }
     }
 
     public void AntesGTGL(View view) {
