@@ -8,19 +8,19 @@
     tools:context="com.ajla.app_asistencia.Admin_Menu_Oferta_Ciclo">
 
     <Button
-    android:onClick="oferciclo"
-    android:id="@+id/btnAsigMaterias"
-    android:layout_width="124dp"
-    android:layout_height="88dp"
-    android:text="@string/BotonAsignacionMaterias"
-    tools:layout_editor_absoluteX="203dp"
-    tools:layout_editor_absoluteY="80dp" />
+        android:id="@+id/btnAsigMaterias"
+        android:layout_width="124dp"
+        android:layout_height="88dp"
+        android:onClick="oferciclo"
+        android:text="@string/BotonAsignacionMaterias"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="80dp" />
 
     <Button
-        android:onClick="oferciclo"
         android:id="@+id/btnRegistGTGL"
         android:layout_width="124dp"
         android:layout_height="88dp"
+        android:onClick="oferciclo"
         android:text="@string/BotonRegistroGLGT"
         tools:layout_editor_absoluteX="203dp"
         tools:layout_editor_absoluteY="80dp" />

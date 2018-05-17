@@ -20,4 +20,5 @@
     <string name="DocenteGL">Docente GL</string>
     <string name="localGL">Laboratorio</string>
     <string name="GuardarGL">Guardar</string>
+    <string name="AgregarOferta">Agregar Oferta</string>
 </resources>

@@ -23,6 +23,7 @@
         <activity android:name=".Admin_Asig_GT" />
         <activity android:name=".Admin_Asig_GL" />
         <activity android:name=".Admin_AntesGTGL" />
+        <activity android:name=".Admin_ListadoOfertas"></activity>
     </application>
 
 </manifest>
