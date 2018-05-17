@@ -19,7 +19,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <android.support.v7.widget.RecyclerView
+        <ListView
+            android:id="@+id/lv_asis"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -34,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/spi_asis"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
