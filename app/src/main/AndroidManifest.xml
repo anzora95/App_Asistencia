@@ -28,7 +28,14 @@
         <activity android:name=".Alumno_Inscripcion"
             android:parentActivityName=".Alumno_Materia"/>
         <activity android:name=".DocenteMateria" />
-        <activity android:name=".DocenteAsistenciaGT" />
+        <activity android:name=".DocenteAsistenciaGT" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".DocenteEvaluacion" />
         <activity android:name=".DocenteAsistenciaGL" />
         <activity android:name=".DocenteAsistenciaEVA" />
