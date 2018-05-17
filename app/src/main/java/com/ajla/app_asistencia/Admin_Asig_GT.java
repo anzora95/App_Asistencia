@@ -3,6 +3,7 @@ package com.ajla.app_asistencia;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class Admin_Asig_GT extends AppCompatActivity {
 
@@ -13,5 +14,6 @@ public class Admin_Asig_GT extends AppCompatActivity {
     }
 
     public void onGT(View view) {
+        Toast.makeText(Admin_Asig_GT.this,"Grupo Guardado con exito",Toast.LENGTH_SHORT).show();
     }
 }

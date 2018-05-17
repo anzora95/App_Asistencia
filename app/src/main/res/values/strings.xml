@@ -12,6 +12,15 @@
 
     <string name="title_activity_jefe_menu">jefeMenu</string>
     <string name="textview">TextView</string>
+    <string name="listmaestros">Listado De Catedráticos</string>
+    <string name="nuevocatedratico">Formulario para nuevo catedrático</string>
+    <string name="isss">ISSS</string>
+    <string name="listmaterias">Lista de Materias</string>
+    <string name="msjingresomaterias">Ingreso de Nueva Materia</string>
+    <string name="codmateria">Codigo de Materia</string>
+    <string name="nommateria">Nombre de Materia</string>
+    <string name="area">Departamento</string>
+    <string name="guardar">Guardar</string>
     <string name="Buton2">Maestro</string>
     <string name="Buton1">Materia</string>
     <string name="Buton3">Locales</string>
@@ -63,4 +72,13 @@
     <string name="btnasistencia">pasar asistencia</string>
 
 
+    <string name="nomdoceingreso">Nombres</string>
+    <string name="msjingresomdoce">Ingreso de Nuevo Catedrático</string>
+    <string name="apedoceingreso">Apellidos</string>
+    <string name="contradoce">Contraseña</string>
+    <string name="msjasignaciongrupos">Seleecione el tipo de grupos a crear</string>
+    <string name="agregarcate">+ Agregar</string>
+    <string name="agregarmate">+ Agregar</string>
+    <string name="adminasignacion">Seleccione solo las materias que estarán disponibles este ciclo</string>
+    <string name="msjbienvenidaadmin">¡Bienvenido Administrador!</string>
 </resources>

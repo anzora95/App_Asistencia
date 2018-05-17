@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".jefeMenu" />
+
         <activity android:name=".jefeListDiferidos" />
         <activity android:name=".jefeDiferido" />
         <activity android:name=".DocenteMenu">
@@ -32,11 +32,18 @@
         <activity android:name=".DocenteEvaluacion" />
         <activity android:name=".DocenteAsistenciaGL" />
         <activity android:name=".DocenteAsistenciaEVA" />
+        <activity android:name=".AdminMateriasCatalogoActivity" />
+        <activity android:name=".AdminMestroActivity" />
+        <activity android:name=".MaestroNuevoActivity" />
+        <activity android:name=".MateriasMenuActivity" />
+        <activity android:name=".MateriasIngresarActivity" />
+        <activity android:name=".AsignacionMateriasActivity" />
         <activity android:name=".Admin_Menu_Oferta_Ciclo" />
         <activity android:name=".Admin_Registro_GL_GT" />
         <activity android:name=".Admin_Asig_GT" />
         <activity android:name=".Admin_Asig_GL" />
         <activity android:name=".Admin_AntesGTGL" />
+        <activity android:name=".AdminAlumnoActivity"></activity>
         <activity android:name=".jefeMenu" />
         <activity android:name=".Alumno_diferido"
             android:parentActivityName=".Alumno_Menu"/>

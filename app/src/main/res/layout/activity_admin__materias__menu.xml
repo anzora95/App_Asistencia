@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/fondo"
     tools:context="com.ajla.app_asistencia.Admin_Materias_Menu">
 
 
@@ -14,16 +15,21 @@
         android:layout_width="124dp"
         android:layout_height="88dp"
         android:text="@string/BotonCatalogoMaterias"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="80dp" />
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="130dp"/>
     <Button
         android:onClick="matmenu"
         android:id="@+id/btnOfertaCiclo"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
         android:layout_width="124dp"
         android:layout_height="88dp"
         android:text="@string/BotonOfertaCiclo"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="80dp" />
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="130dp"/>
 
 
 

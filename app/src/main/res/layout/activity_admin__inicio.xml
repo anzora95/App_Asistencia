@@ -5,49 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/fondo"
     tools:context="com.ajla.app_asistencia.Admin_Inicio">
+    <TextView
+        android:id="@+id/bienvenidaadmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:text="@string/msjbienvenidaadmin"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:textSize="20sp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:src="@drawable/maestro"
+        android:id="@+id/maestro"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:src="@drawable/materias"
+        android:id="@+id/materias"
+        android:layout_marginBottom="20dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:src="@drawable/locales"
+        android:id="@+id/locales"
+        android:layout_marginBottom="20dp"/>
 
-    <Button
-        android:onClick="prueba"
-        android:id="@+id/btnMateria"
-        android:layout_width="124dp"
-        android:layout_height="88dp"
-        android:text="@string/Buton1"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="80dp" />
+    <ImageView
+        android:id="@+id/alumno"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/alumno"
+        />
 
-    <Button
-        android:onClick="prueba"
-        android:id="@+id/btnMaestro"
-        android:layout_width="124dp"
-        android:layout_height="88dp"
-        android:text="@string/Buton2"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="80dp" />
 
-    <Button
-        android:onClick="prueba"
-        android:id="@+id/btnLocales"
-        android:layout_width="124dp"
-        android:layout_height="88dp"
-        android:text="@string/Buton3"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="80dp" />
-
-    <Button
-        android:onClick="prueba"
-        android:id="@+id/btnAlumno"
-        android:layout_width="124dp"
-        android:layout_height="88dp"
-        android:text="@string/Buton4"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="80dp" />
-    <Button
-        android:onClick="prueba"
-        android:id="@+id/btnArea"
-        android:layout_width="124dp"
-        android:layout_height="88dp"
-        android:text="@string/Buton5"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="80dp" />
 </LinearLayout>
