@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.ajla.app_asistencia.Entidades.Administrador;
 import com.ajla.app_asistencia.Entidades.Alumno;
+import com.ajla.app_asistencia.Entidades.Docente;
+import com.ajla.app_asistencia.Entidades.Jefe_Departamento;
 import com.ajla.app_asistencia.Entidades.Materia;
 
 import java.util.ArrayList;
@@ -53,9 +55,16 @@ public class MainActivity extends AppCompatActivity {
 
                 lanzarActi_admin();
 
+            }else if(validacionDocente(name,pass)){//validacion docente
+
+                lanzarActi_Docente();
+
+            }else if(validacionJefe(name,pass)){//validacion de jefe de departamento
+                lanzarActi_Jefe();
+
             }else{
 
-                Toast.makeText(MainActivity.this,"datos erroneos", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"datos equivocados",Toast.LENGTH_LONG).show();
             }
 
 
@@ -156,27 +165,100 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //----------------------------------VALIDACION DOCENTE------------------------------------
 
+    private boolean validacionDocente(String n, String p){
 
-    /*private void consultarlistamaterias() {
+        SQLiteDatabase base= conect.getReadableDatabase();
+        boolean bandera=false;
 
-        SQLiteDatabase db=conect.getReadableDatabase();
+        Docente docente = null;
 
-        Materia materia=null;
-        listamaterias = new ArrayList<Materia>();
-        Cursor cursor=db.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_MATERIA,null);
+        List <Docente> ls_docen = new ArrayList<>();
+
+        Cursor cursor = base.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_DOCENTE,null);
 
         while(cursor.moveToNext()){
-            materia= new Materia(null,null);
-            materia.setCod_materia(cursor.getString(0));
-            materia.setNom_materia(cursor.getString(2));
 
-
-            listamaterias.add(materia);
+            docente = new Docente(null, null, null,null);
+            docente.setIsss(cursor.getString(0));
+            docente.setContra_doce(cursor.getString(3));
+            ls_docen.add(docente);
 
         }
-        obtenerlista();
+        for(Docente doc:ls_docen){
 
-    }*/
+            if (doc.getContra_doce().equals(p) && doc.getIsss().equals(n)){
+
+                cursor.close();
+                bandera=true;
+            }
+        }
+
+        return bandera;
+
+
+    }
+
+    //--------------------------------------------LANZAR ACTIVITY DOCENTE-------------------------
+
+    private void lanzarActi_Docente(){
+
+        Intent inte_doc = new Intent(MainActivity.this,DocenteMenu.class);
+        inte_doc.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(inte_doc);
+
+    }
+
+    //--------------------------------------------VALIDACION JEFE DE DEPARTAMENTO------------------------------------
+
+    private boolean validacionJefe(String n, String p){ //donde n es nombre y p es password
+
+        SQLiteDatabase base= conect.getReadableDatabase();
+        boolean bandera=false;
+
+
+        Jefe_Departamento jefe = null;
+        List<Jefe_Departamento> ls_jefe = new ArrayList<>();
+        Cursor cursor= base.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_JEFE_DEPARTAMENTO,null);
+
+        while(cursor.moveToNext()){
+
+            jefe = new Jefe_Departamento(null, null, null, null);
+            jefe.setIsss(cursor.getString(1));
+            jefe.setContra_jefe(cursor.getString(3));
+            ls_jefe.add(jefe);
+
+        }
+
+        for(Jefe_Departamento boss:ls_jefe){
+
+            if (boss.getContra_jefe().equals(p) && boss.getIsss().equals(n)){
+
+                cursor.close();
+                bandera=true;
+            }
+        }
+
+        return bandera;
+
+
+    }
+
+    //----------LANZA ACTIVITY ALUMNO MENU-------------
+
+    private void lanzarActi_Jefe(){
+
+        Intent inte_jefe = new Intent(MainActivity.this,jefeMenu.class);
+        inte_jefe.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(inte_jefe);
+
+
+    }
+
+
+
+
+
 
 }
