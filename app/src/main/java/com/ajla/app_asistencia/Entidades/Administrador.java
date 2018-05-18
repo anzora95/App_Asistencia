@@ -7,21 +7,21 @@ import java.io.Serializable;
  */
 
 public class Administrador implements Serializable{
-    private Character usuario;
+    private String usuario;
     private String contraseaña;
 
 
 
-    public Administrador(Character usuario, String contraseaña) {
+    public Administrador(String usuario, String contraseaña) {
         this.usuario = usuario;
         this.contraseaña = contraseaña;
     }
 
-    public Character getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Character usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 

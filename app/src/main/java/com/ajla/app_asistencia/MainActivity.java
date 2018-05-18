@@ -10,11 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ajla.app_asistencia.Entidades.Administrador;
 import com.ajla.app_asistencia.Entidades.Alumno;
 import com.ajla.app_asistencia.Entidades.Materia;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.ajla.app_asistencia.ConexionSQLiteHelper.DatosTabla.CAMPO_USUARIO;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,28 +40,40 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent inte_inicio = new Intent(MainActivity.this,Alumno_Menu.class);
-               inte_inicio.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-               startActivity(inte_inicio);
 
              String name= edt_nom.getText().toString();
              String pass = edt_pass.getText().toString();
 
-             validacion(name,pass);
+            if( validacionAlumno(name,pass)){
+
+                lanzarActi_alum();
+
+            }else if(validacioAdmin(name,pass)){//validacion administrador
 
 
-             //crear metodo que compare pass y name
+                lanzarActi_admin();
+
+            }else{
+
+                Toast.makeText(MainActivity.this,"datos erroneos", Toast.LENGTH_LONG).show();
+            }
+
+
             }
         });
 
 
     }
 
-    private void validacion(String n, String p){ //donde n es nombre y p es password
+    //------------------VALIDACION PARA EL ALUMNO------------------------
+
+    private boolean validacionAlumno(String n, String p){ //donde n es nombre y p es password
 
         SQLiteDatabase base= conect.getReadableDatabase();
-        Alumno alum = null;
+        boolean bandera=false;
 
+
+        Alumno alum = null;
         List<Alumno> ls_alum = new ArrayList<Alumno>();
         Cursor cursor= base.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_ALUMNO,null);
 
@@ -75,14 +90,69 @@ public class MainActivity extends AppCompatActivity {
 
             if (stud.getContra_alum().equals(p) && stud.getCarnet().equals(n)){
 
-                Intent inte_alum = new Intent(MainActivity.this,Alumno_Menu.class);
-                startActivity(inte_alum);
+                cursor.close();
+                bandera=true;
+                }
+        }
+
+        return bandera;
+
+
+    }
+
+    //----------LANZA ACTIVITY ALUMNO MENU-------------
+
+    private void lanzarActi_alum(){
+
+        Intent inte_alum = new Intent(MainActivity.this,Alumno_Menu.class);
+        inte_alum.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(inte_alum);
+
+
+    }
+
+    //-----------------------VALIDACION ADMINISTRADOR-----------------
+
+
+    private boolean validacioAdmin(String n, String p){
+
+        SQLiteDatabase base= conect.getReadableDatabase();
+        boolean bandera=false;
+
+        Administrador admini = null;
+        List <Administrador> ls_Admin = new ArrayList<>();
+
+        Cursor cursor = base.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_ADMINISTRADOR,null);
+
+        while(cursor.moveToNext()){
+
+            admini = new Administrador(null, null);
+            admini.setUsuario(cursor.getString(0));
+            admini.setContraseaña(cursor.getString(1));
+            ls_Admin.add(admini);
+
+        }
+        for(Administrador admin:ls_Admin){
+
+            if (admin.getContraseaña().equals(p) && admin.getUsuario().equals(n)){
 
                 cursor.close();
-
+                bandera=true;
             }
         }
 
+        return bandera;
+
+
+    }
+
+    //--------LANZAR ACTIVITY ADMINISTRADOR MENU-----------------------
+
+    private void lanzarActi_admin(){
+
+        Intent inte_admin = new Intent(MainActivity.this,Admin_Inicio.class);
+        inte_admin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(inte_admin);
 
     }
 
