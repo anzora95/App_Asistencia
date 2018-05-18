@@ -7,19 +7,23 @@
     tools:context=".Alumno_Materia">
 
     <ListView
-        android:id="@+id/chek_ls"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/check_ls"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_guardar_materiaAlum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
 
     <Button
-        android:id="@+id/btn_alumMat_inscri"
+        android:id="@+id/btn_guardar_materiaAlum"
         android:layout_width="0dp"
-        android:layout_height="59dp"
-        android:text="@string/btn_inc_materia"
+        android:layout_height="52dp"
+        android:text="@string/GuardarGL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_ls" />
 </android.support.constraint.ConstraintLayout>

@@ -97,4 +97,15 @@
     <string name="agregarmate">+ Agregar</string>
     <string name="adminasignacion">Seleccione solo las materias que estarán disponibles este ciclo</string>
     <string name="msjbienvenidaadmin">¡Bienvenido Administrador!</string>
+
+<!-- Titulos de las pantallas -->
+
+    <string name="Login_Titulo">Login</string>
+    <string name="Menu">Menu</string>
+    <string name="Selc_Materia">Materia</string>
+    <string name="Incriba">Grupos</string>
+    <string name="Lista_asis">Asistencia</string>
+    <string name="Sol_dife">Solicitud</string>
+
+
 </resources>

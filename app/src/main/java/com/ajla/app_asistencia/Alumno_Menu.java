@@ -26,7 +26,7 @@ public class Alumno_Menu extends AppCompatActivity {
         btn_inscri_Alumenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inte_Inscri = new Intent(Alumno_Menu.this, Alumno_Inscripcion.class);
+                Intent inte_Inscri = new Intent(Alumno_Menu.this, Alumno_Materia.class);
                 startActivity(inte_Inscri);
             }
         });
