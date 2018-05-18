@@ -94,9 +94,7 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
     }
 
     private void consultarlistamaterias() {
-
         SQLiteDatabase db=conec.getReadableDatabase();
-
         Materia materia=null;
         listamaterias = new ArrayList<Materia>();
         Cursor cursor=db.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_MATERIA,null);
@@ -106,7 +104,6 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
             materia.setCod_materia(cursor.getString(0));
             materia.setCod_area(cursor.getString(1));
             materia.setNom_materia(cursor.getString(2));
-
 
             listamaterias.add(materia);
 
@@ -129,7 +126,7 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
     private void aceptar() {
         SQLiteDatabase db=conec.getWritableDatabase();
         db.execSQL("Delete from materia where cod_materia='"+puente+"'");
-        Toast.makeText(this,"FUNCIONA SIIII~", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Materia eliminada", Toast.LENGTH_SHORT).show();
 
 
     }

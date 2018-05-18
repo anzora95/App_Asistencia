@@ -24,13 +24,11 @@ import java.util.ArrayList;
 
 public class MateriasIngresarActivity extends AppCompatActivity {
     EditText codmate,nommate;
-    //TextView depa;
     String datospuente;
     ConexionSQLiteHelper conec;
     Spinner sp_materasin;
     ArrayList listadepartamentos;
     ArrayList<Area> ls;
-    ContentValues row2;
 
 
     @Override

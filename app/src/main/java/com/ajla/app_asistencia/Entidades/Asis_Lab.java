@@ -10,9 +10,22 @@ import java.sql.Date;
 public class Asis_Lab implements Serializable{
 
     private Date fecha_lab;
+    private Integer id_oferta_lab;
 
-    public Asis_Lab(Date fecha_lab) {
+    public Asis_Lab() {
+    }
+
+    public Asis_Lab(Date fecha_lab, Integer id_oferta_lab) {
         this.fecha_lab = fecha_lab;
+        this.id_oferta_lab = id_oferta_lab;
+    }
+
+    public Integer getId_oferta_lab() {
+        return id_oferta_lab;
+    }
+
+    public void setId_oferta_lab(Integer id_oferta_lab) {
+        this.id_oferta_lab = id_oferta_lab;
     }
 
     public Date getFecha_lab() {

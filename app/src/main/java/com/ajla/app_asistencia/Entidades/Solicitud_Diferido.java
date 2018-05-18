@@ -9,11 +9,52 @@ import java.io.Serializable;
 public class Solicitud_Diferido implements Serializable{
 
  private Integer id_solicitud;
- private Character estado;
+ private String estado;
+ private String carnet;
+ private String isss;
+ private String periodo;
 
-    public Solicitud_Diferido(Integer id_solicitud, Character estado) {
+    public Solicitud_Diferido() {
+    }
+
+    public Solicitud_Diferido(Integer id_solicitud, String estado, String carnet, String isss, String periodo) {
         this.id_solicitud = id_solicitud;
         this.estado = estado;
+        this.carnet = carnet;
+        this.isss = isss;
+        this.periodo = periodo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCarnet() {
+        return carnet;
+    }
+
+    public void setCarnet(String carnet) {
+        this.carnet = carnet;
+    }
+
+    public String getIsss() {
+        return isss;
+    }
+
+    public void setIsss(String isss) {
+        this.isss = isss;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
     }
 
     public Integer getId_solicitud() {
@@ -24,11 +65,5 @@ public class Solicitud_Diferido implements Serializable{
         this.id_solicitud = id_solicitud;
     }
 
-    public Character getEstado() {
-        return estado;
-    }
 
-    public void setEstado(Character estado) {
-        this.estado = estado;
-    }
 }

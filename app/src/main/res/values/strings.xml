@@ -39,4 +39,8 @@
     <string name="adminasignacion">Seleccione solo las materias que estarán disponibles este ciclo</string>
     <string name="msjbienvenidaadmin">¡Bienvenido Administrador!</string>
     <string name="msjeditmaterias">Editar materias</string>
+    <string name="listlocales">Lista de Locales</string>
+    <string name="local">Local</string>
+    <string name="capacidad">Capacidad</string>
+    <string name="tipo">Tipo</string>
 </resources>

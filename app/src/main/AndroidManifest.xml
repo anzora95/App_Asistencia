@@ -31,7 +31,11 @@
         <activity android:name=".Admin_AntesGTGL" />
         <activity android:name=".AdminAlumnoActivity" />
         <activity android:name=".AdminMaestroActualizarActivity" />
-        <activity android:name=".AdminMateriasActualizarActivity"></activity>
+        <activity android:name=".AdminMateriasActualizarActivity" />
+        <activity android:name=".AdminLocalesActivity" />
+        <activity android:name=".AdminLocalesActualizarActivity" />
+        <activity android:name=".AdminLocalNuevoActivity" />
+        <activity android:name=".Admin_ListadoOfertas"></activity>
     </application>
 
 </manifest>
