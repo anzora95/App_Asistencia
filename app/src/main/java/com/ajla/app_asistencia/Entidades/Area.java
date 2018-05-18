@@ -7,19 +7,22 @@ import java.io.Serializable;
  */
 
 public class Area implements Serializable{
-    private Character cod_area;
+    private String cod_area;
     private String mon_area;
 
-    public Area(Character cod_area, String mon_area) {
+    public Area() {
+    }
+
+    public Area(String cod_area, String mon_area) {
         this.cod_area = cod_area;
         this.mon_area = mon_area;
     }
 
-    public Character getCod_area() {
+    public String getCod_area() {
         return cod_area;
     }
 
-    public void setCod_area(Character cod_area) {
+    public void setCod_area(String cod_area) {
         this.cod_area = cod_area;
     }
 

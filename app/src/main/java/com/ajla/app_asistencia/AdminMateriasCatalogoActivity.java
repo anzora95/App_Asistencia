@@ -24,7 +24,11 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
     ConexionSQLiteHelper conec;
     ArrayList<String> lmateinfo;
     ArrayList<Materia> listamaterias;
-    //Onda del video
+    String puente;
+    String cod_mate,cod_area,nom_mate;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,10 +45,19 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
         listViewmaterias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String valor = (String) adapterView.getItemAtPosition(i); //Onda del video
-                Intent lista = new Intent(AdminMateriasCatalogoActivity.this, MateriasIngresarActivity.class);  //Onda del video
-                lista.putExtra("Materias", valor);
+                cod_mate =listamaterias.get(i).getCod_materia();
+                cod_area=listamaterias.get(i).getCod_area();
+                nom_mate= listamaterias.get(i).getNom_materia();
+
+
+
+
+                Intent lista = new Intent(AdminMateriasCatalogoActivity.this, AdminMateriasActualizarActivity.class);  //Onda del video
+                lista.putExtra("editcodmate",cod_mate);
+                lista.putExtra("editcodarea",cod_area);
+                lista.putExtra("editmate",nom_mate);
                 startActivity(lista);
+
 
             }
         });
@@ -52,6 +65,7 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
         listViewmaterias.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                puente = listamaterias.get(i).getCod_materia();
                 Context context = AdminMateriasCatalogoActivity.this;
                 AlertDialog.Builder DialogoAlerta = new AlertDialog.Builder(context);
                 DialogoAlerta.setTitle("ELIMINAR MATERIA");
@@ -88,8 +102,9 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
         Cursor cursor=db.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_MATERIA,null);
 
         while(cursor.moveToNext()){
-            materia= new Materia(null,null);
+            materia= new Materia();
             materia.setCod_materia(cursor.getString(0));
+            materia.setCod_area(cursor.getString(1));
             materia.setNom_materia(cursor.getString(2));
 
 
@@ -112,7 +127,11 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
 
 
     private void aceptar() {
-        Toast.makeText(this, "FUNCIONA SIIII~", Toast.LENGTH_SHORT).show();
+        SQLiteDatabase db=conec.getWritableDatabase();
+        db.execSQL("Delete from materia where cod_materia='"+puente+"'");
+        Toast.makeText(this,"FUNCIONA SIIII~", Toast.LENGTH_SHORT).show();
+
+
     }
 
     private void cancelar() {

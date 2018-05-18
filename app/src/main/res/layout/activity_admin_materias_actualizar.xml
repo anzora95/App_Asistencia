@@ -2,20 +2,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MaestroNuevoActivity">
+    tools:context=".AdminMateriasActualizarActivity">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:layout_marginStart="30dp"
-        android:text="@string/msjingresomdoce"
+        android:layout_marginStart="45dp"
+        android:text="@string/msjeditmaterias"
         android:textColor="@color/negro"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:enabled="true"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/negro"
+            android:text="@string/codmateria"
+            />
+
+        <EditText
+            android:id="@+id/actcodmate"
+            android:layout_width="270dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/fondo"
+            android:enabled="false"/>
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,18 +50,44 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:text="@string/isss"
-            android:textColor="@color/negro"
+            android:textStyle="bold"
             android:textSize="13sp"
-            android:textStyle="bold" />
+            android:textColor="@color/negro"
+            android:text="@string/nommateria" />
+
         <EditText
-            android:id="@+id/isssnuevo"
+            android:id="@+id/actnommateria"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/fondo"
+             />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+
+            android:text="@string/area"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/negro"/>
+
+        <Spinner
+            android:id="@+id/spinnerdepactmateria"
             android:layout_width="270dp"
             android:layout_height="34dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:background="@color/fondo"
-            android:hint="Ej.546789091" />
+
+            />
+
+
 
     </RelativeLayout>
 
@@ -43,84 +95,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="@string/nomdoceingreso"
-            android:textColor="@color/negro"
-            android:textSize="13sp"
-            android:textStyle="bold" />
-        <EditText
-            android:id="@+id/nomdocenuevo"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:background="@color/fondo"
-            android:hint="Ej.Eduardo José" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:text="@string/apedoceingreso"
-            android:textColor="@color/negro"
-            android:textSize="13sp"
-            android:textStyle="bold" />
-        <EditText
-            android:id="@+id/apedocenuevo"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:background="@color/fondo"
-            android:hint="Recinos Galdamez" />
-    </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="@string/contradoce"
-                android:textColor="@color/negro"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-            <EditText
-                android:id="@+id/contradocenuevo"
-                android:layout_width="270dp"
-                android:layout_height="34dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:background="@color/fondo"
-                android:hint="Ej.XXXXXXXXX" />
-
-
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="4sp"
-            android:layout_marginStart="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:text="@string/guardar"
+            android:id="@+id/btnguardar"
             android:onClick="guardar"/>
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

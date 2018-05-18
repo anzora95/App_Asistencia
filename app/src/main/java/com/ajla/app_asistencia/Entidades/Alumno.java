@@ -13,7 +13,8 @@ public class Alumno implements Serializable{
     private String apel_alum;
     private String contra_alum;
 
-
+    public Alumno() {
+    }
 
     public Alumno(String carnet, String nom_alum, String apel_alum, String contra_alum) {
         this.carnet = carnet;

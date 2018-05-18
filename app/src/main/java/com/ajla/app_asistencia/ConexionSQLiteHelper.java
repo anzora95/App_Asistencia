@@ -308,9 +308,22 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
         onCreate(db);
     }
+
+
+   /* public void ingresomaterias(String cod, String nom, String area){
+        String depa=nom; ////cambiar
+
+
+        SQLiteDatabase db = null;
+        Cursor pue =db.rawQuery ("Select cod_area from area where nom_area=="+area);
+
+       db.execSQL("INSERT INTO"+DatosTabla.TABLA_MATERIA+"values("+cod+","+ nom+","+depa+")");
+
+
+    }
     public void close(){
         this.close();
-    }
+    }*/
 
     }
 

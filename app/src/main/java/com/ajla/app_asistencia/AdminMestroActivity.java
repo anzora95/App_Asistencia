@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ajla.app_asistencia.Entidades.Docente;
-import com.ajla.app_asistencia.Entidades.Materia;
 
 import java.util.ArrayList;
 
@@ -25,7 +24,10 @@ public class AdminMestroActivity extends AppCompatActivity {
     ConexionSQLiteHelper conec;
     ArrayList<String> lmaesinfo;
     ArrayList<Docente> listamaestro;
-    TextView tv_isss,tv_nombre,tv_apellido,tv_contraseña;
+    String puen;
+    String tv_isss,tv_nombre,tv_apellido,tv_contraseña;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,30 +37,19 @@ public class AdminMestroActivity extends AppCompatActivity {
 
         listViewMaestros = (ListView) findViewById(R.id.listmaestros);
 
+
         consultarlistamaestro();
-       //Onda del video
-        ArrayAdapter adaptado= new ArrayAdapter(this,android.R.layout.simple_list_item_1,lmaesinfo); //Onda del video
+
+
+
+        ArrayAdapter adaptado= new ArrayAdapter(this,android.R.layout.simple_list_item_1,lmaesinfo);
         listViewMaestros.setAdapter(adaptado);
 
-        listViewMaestros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                tv_isss = (TextView) view.findViewById(R.id.editisss);
-                tv_nombre =(TextView) view.findViewById(R.id.editNombre);
-                tv_apellido= (TextView) view.findViewById(R.id.editApellido);
-                tv_contraseña =(TextView) view.findViewById(R.id.editContraseña);
-
-                String aux_isss = tv_isss.getText().toString();
-
-                Intent lista = new Intent(AdminMestroActivity.this, MaestroNuevoActivity.class);  //Onda del video
-                lista.putExtra("idisss",aux_isss);
-                startActivity(lista);
-
-            }
-        });
         listViewMaestros.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                puen = listamaestro.get(i).getIsss();
+
                 Context context = AdminMestroActivity.this;
                 AlertDialog.Builder DialogoAlerta = new AlertDialog.Builder(context);
                 DialogoAlerta.setTitle("ELIMINAR CATEDRÁTICO");
@@ -83,6 +74,27 @@ public class AdminMestroActivity extends AppCompatActivity {
             }
         });
 
+        listViewMaestros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                tv_isss =listamaestro.get(i).getIsss();
+                tv_nombre =listamaestro.get(i).getNom_doce();
+                tv_apellido= listamaestro.get(i).getApe_doce();
+                tv_contraseña =listamaestro.get(i).getContra_doce();
+
+
+
+                Intent lista = new Intent(AdminMestroActivity.this, AdminMaestroActualizarActivity.class);  //Onda del video
+                lista.putExtra("isssac",tv_isss);
+                lista.putExtra("nomac",tv_nombre);
+                lista.putExtra("apeac",tv_apellido);
+                lista.putExtra("contrac",tv_contraseña);
+                startActivity(lista);
+
+            }
+        });
+
+
     }
 
 
@@ -90,12 +102,12 @@ public class AdminMestroActivity extends AppCompatActivity {
 
         SQLiteDatabase db=conec.getReadableDatabase();
 
-        Docente doce =null;
+        Docente doce;
         listamaestro = new ArrayList<Docente>();
         Cursor cursor=db.rawQuery("SELECT * FROM "+ConexionSQLiteHelper.DatosTabla.TABLA_DOCENTE,null );
 
         while(cursor.moveToNext()){
-            doce= new Docente(null,null,null,null);
+            doce= new Docente();
             doce.setIsss(cursor.getString(0));
             doce.setNom_doce(cursor.getString(1));
             doce.setApe_doce(cursor.getString(2));
@@ -119,6 +131,8 @@ public class AdminMestroActivity extends AppCompatActivity {
 
 
     private void aceptar() {
+        SQLiteDatabase db=conec.getWritableDatabase();
+        db.execSQL("Delete from docente where isss='"+puen+"'");
         Toast.makeText(this,"FUNCIONA SIIII~", Toast.LENGTH_SHORT).show();
     }
 

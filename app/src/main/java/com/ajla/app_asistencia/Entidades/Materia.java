@@ -9,11 +9,29 @@ import java.io.Serializable;
 public class Materia implements Serializable{
  private String cod_materia;
  private String nom_materia;
+    private String cod_area;
 
-    public Materia(String cod_materia, String nom_materia) {
+
+    public Materia() {
+    }
+
+    public Materia(String cod_materia, String nom_materia, String cod_area) {
         this.cod_materia = cod_materia;
         this.nom_materia = nom_materia;
+        this.cod_area = cod_area;
     }
+
+    public String getCod_area() {
+        return cod_area;
+    }
+
+    public void setCod_area(String cod_area) {
+        this.cod_area = cod_area;
+    }
+
+
+
+
 
     public String getCod_materia() {
         return cod_materia;

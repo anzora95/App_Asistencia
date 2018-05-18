@@ -18,7 +18,8 @@
         <EditText
             android:id="@+id/editisss"
             android:inputType="text"
-            android:maxLength="7" />
+            android:maxLength="30"
+            android:enabled="false"/>
     </TableRow>
     <TableRow>
     <TextView android:text="@string/nomdoceingreso" />
@@ -39,7 +40,7 @@
         <EditText
             android:id="@+id/editContraseña"
             android:inputType="text"
-            android:maxLength="1" />
+            android:maxLength="30" />
     </TableRow>
     </TableLayout>
 
@@ -50,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_marginStart="130dp"
             android:onClick="editdocente"
-            android:textColor="@color/colorPrincipal"
+            android:textColor="@color/colorPrincipalOscuro"
             android:textStyle="bold"
             android:text="@string/guardar" />
 

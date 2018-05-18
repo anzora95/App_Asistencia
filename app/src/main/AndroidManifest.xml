@@ -30,7 +30,8 @@
         <activity android:name=".Admin_Asig_GL" />
         <activity android:name=".Admin_AntesGTGL" />
         <activity android:name=".AdminAlumnoActivity" />
-        <activity android:name=".AdminMaestroActualizarActivity"></activity>
+        <activity android:name=".AdminMaestroActualizarActivity" />
+        <activity android:name=".AdminMateriasActualizarActivity"></activity>
     </application>
 
 </manifest>

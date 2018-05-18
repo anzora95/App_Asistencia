@@ -38,4 +38,5 @@
     <string name="agregarmate">+ Agregar</string>
     <string name="adminasignacion">Seleccione solo las materias que estarán disponibles este ciclo</string>
     <string name="msjbienvenidaadmin">¡Bienvenido Administrador!</string>
+    <string name="msjeditmaterias">Editar materias</string>
 </resources>
