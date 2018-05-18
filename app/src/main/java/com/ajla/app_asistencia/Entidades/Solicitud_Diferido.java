@@ -10,13 +10,13 @@ import java.sql.Date;
 public class Solicitud_Diferido implements Serializable{
 
  private Integer id_solicitud;
- private Character carnet;
- private Character isss;
- private Character periodo;
+ private String carnet;
+ private String isss;
+ private String periodo;
  private Date fecha_examen;
  private String  estado;
 
-    public Solicitud_Diferido(Integer id_solicitud, Character carnet, Character isss, Character periodo, Date fecha_examen, String estado) {
+    public Solicitud_Diferido(Integer id_solicitud, String carnet, String isss, String periodo, Date fecha_examen, String estado) {
         this.id_solicitud = id_solicitud;
         this.carnet = carnet;
         this.isss = isss;
@@ -33,27 +33,27 @@ public class Solicitud_Diferido implements Serializable{
         this.id_solicitud = id_solicitud;
     }
 
-    public Character getCarnet() {
+    public String getCarnet() {
         return carnet;
     }
 
-    public void setCarnet(Character carnet) {
+    public void setCarnet(String carnet) {
         this.carnet = carnet;
     }
 
-    public Character getIsss() {
+    public String getIsss() {
         return isss;
     }
 
-    public void setIsss(Character isss) {
+    public void setIsss(String isss) {
         this.isss = isss;
     }
 
-    public Character getPeriodo() {
+    public String getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(Character periodo) {
+    public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
 

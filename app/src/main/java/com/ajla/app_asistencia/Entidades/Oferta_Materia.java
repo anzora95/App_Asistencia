@@ -9,30 +9,30 @@ import java.io.Serializable;
 public class Oferta_Materia implements Serializable{
 
     private Integer cod_ofer_mate;
-    private Character cod_materia;
-    private Character isss;
-    private Character ciclo_anio;
+    private String cod_materia;
+    private String isss;
+    private String ciclo_anio;
 
-    public Oferta_Materia(Integer cod_ofer_mate, Character cod_materia, Character isss, Character ciclo_anio) {
+    public Oferta_Materia(Integer cod_ofer_mate, String cod_materia, String isss, String ciclo_anio) {
         this.cod_ofer_mate = cod_ofer_mate;
         this.cod_materia = cod_materia;
         this.isss = isss;
         this.ciclo_anio = ciclo_anio;
     }
 
-    public Character getCod_materia() {
+    public String getCod_materia() {
         return cod_materia;
     }
 
-    public void setCod_materia(Character cod_materia) {
+    public void setCod_materia(String cod_materia) {
         this.cod_materia = cod_materia;
     }
 
-    public Character getIsss() {
+    public String getIsss() {
         return isss;
     }
 
-    public void setIsss(Character isss) {
+    public void setIsss(String isss) {
         this.isss = isss;
     }
 
@@ -44,11 +44,11 @@ public class Oferta_Materia implements Serializable{
         this.cod_ofer_mate = cod_ofer_mate;
     }
 
-    public Character getCiclo_anio() {
+    public String getCiclo_anio() {
         return ciclo_anio;
     }
 
-    public void setCiclo_anio(Character ciclo_anio) {
+    public void setCiclo_anio(String ciclo_anio) {
         this.ciclo_anio = ciclo_anio;
     }
 }
