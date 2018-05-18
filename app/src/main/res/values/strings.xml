@@ -43,4 +43,5 @@
     <string name="local">Local</string>
     <string name="capacidad">Capacidad</string>
     <string name="tipo">Tipo</string>
+    <string name="listaoderta">Lista de ofertas de esta materia</string>
 </resources>

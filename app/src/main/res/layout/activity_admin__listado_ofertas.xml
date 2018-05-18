@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Admin_ListadoOfertas">
+    <TextView
 
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/textListadoOfertas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/listaoderta"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:layout_marginBottom="10dp"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:baselineAligned="true"
+        android:fillViewport="true">
+
+        <ListView
+            android:id="@+id/listOfertas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" />
+    </ScrollView>
+    <Button
+        android:id="@+id/btnNuevaOferta"
+        android:onClick="nuevOferrta"
+        android:text="@string/agregarcate"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="140dp"
+        android:textColor="@color/colorPrincipal"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>

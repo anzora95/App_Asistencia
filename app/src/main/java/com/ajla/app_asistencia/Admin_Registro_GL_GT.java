@@ -55,6 +55,14 @@ public class Admin_Registro_GL_GT extends AppCompatActivity {
                                                                            listaMatOf.putExtra("codoferta",cod_oferta);
 
                                                                            startActivity(listaMatOf);
+
+
+                                                                          /* Intent lab= new Intent(Admin_Registro_GL_GT.this, Admin_Asig_GL.class);
+                                                                           lab.putExtra("ofercodmate",cod_mate);
+                                                                           lab.putExtra("cicloofer",ciclo);
+                                                                           lab.putExtra("codoferta",cod_oferta);
+
+                                                                           startActivity(lab);*/
                                                                        }
                                                                    }); //Onda del video
 
