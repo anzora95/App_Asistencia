@@ -5,40 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Admin_ListadoOfertas">
-
+    tools:context=".AdminLocalesActivity">
     <TextView
-
-        android:id="@+id/textListadoOfertas"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/listaoderta"
-        android:textAlignment="center"
+        android:text="@string/listlocales"
         android:textStyle="bold"
-        android:textColor="@color/negro"
+        android:layout_marginStart="95dp"
+        android:textSize="25sp"
         android:layout_marginBottom="10dp"
-        />
+        android:textColor="@color/negro"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:baselineAligned="true"
+        android:layout_height="430dp"
         android:fillViewport="true">
-
         <ListView
-            android:id="@+id/listOfertas"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:baselineAligned="false" />
+            android:id="@+id/listLocales"></ListView>
     </ScrollView>
     <Button
-        android:id="@+id/btnNuevaOferta"
-        android:onClick="nuevOferrta"
-        android:text="@string/agregarcate"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="140dp"
-        android:textColor="@color/colorPrincipal"
+        android:layout_height="wrap_content"
+        android:text="@string/agregarcate"
+        android:textColor="@color/colorPrincipalOscuro"
         android:textStyle="bold"
+        android:id="@+id/agregarlocal"
+        android:onClick="agregar"
+        android:layout_marginStart="135dp"
         />
 
-</LinearLayout>
+
+    </LinearLayout>

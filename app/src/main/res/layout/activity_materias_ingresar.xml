@@ -31,7 +31,7 @@
             android:text="@string/codmateria" />
 
         <EditText
-            android:id="@+id/isss"
+            android:id="@+id/insertcodmate"
             android:layout_width="270dp"
             android:layout_height="34dp"
             android:layout_alignParentEnd="true"
@@ -53,7 +53,7 @@
             android:text="@string/nommateria" />
 
         <EditText
-            android:id="@+id/nommateria"
+            android:id="@+id/insertnommateria"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -76,7 +76,7 @@
                 android:textColor="@color/negro"/>
 
         <Spinner
-            android:id="@+id/spinnerGL"
+            android:id="@+id/spinnerdepartingresarmateria"
             android:layout_width="270dp"
             android:layout_height="34dp"
             android:layout_alignParentEnd="true"

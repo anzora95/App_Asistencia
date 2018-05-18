@@ -1,97 +1,91 @@
 package com.ajla.app_asistencia;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Spinner;
 
-public class Admin_ListadoOfertas extends AppCompatActivity implements ListView.OnItemClickListener, AdapterView.OnItemLongClickListener{
+import com.ajla.app_asistencia.Entidades.Materia;
+import com.ajla.app_asistencia.Entidades.Oferta_Lab;
+import com.ajla.app_asistencia.Entidades.Oferta_Materia;
+import com.ajla.app_asistencia.Entidades.Oferta_Teo;
 
-    private TextView textListadoOfertas; //Onda del video
-    private ListView  listOfertas; //Onda del video
-    private String ofertas[]={"oferta1","oferta2","oferta3","4","5","6","7","","","","","","","",""};
+import java.util.ArrayList;
+
+public class Admin_ListadoOfertas extends AppCompatActivity {
+    ConexionSQLiteHelper conec;
+    String datospuente, codmate,codciclo,codoferta;
+    ListView listViewmate;
+    ArrayList<String> lmateinfo;
+    ArrayList<Oferta_Lab> listalabo;
+    ArrayList<Oferta_Teo> listateo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin__listado_ofertas);
 
-        listOfertas = (ListView) findViewById(R.id.listOfertas); //Onda del video
-        ArrayAdapter<String> adap = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,ofertas); //Onda del video
-        listOfertas.setOnItemClickListener(this); //Onda del video
-        listOfertas.setOnItemLongClickListener(this);
 
-        listOfertas.setAdapter(adap);
+        conec = new ConexionSQLiteHelper(this);
+
+        listViewmate = (ListView) findViewById(R.id.listOfertas);
 
 
-        textListadoOfertas=(TextView) findViewById(R.id.textListadoOfertas); //Onda del video
-        Bundle parametrosXD =  getIntent().getExtras();
+        Bundle listav = getIntent().getExtras();
+        codmate = listav.getString("cod_mate");
+        codciclo= listav.getString("ciclo");
+        codoferta = listav.getString("cod_oferta");
 
-        if (parametrosXD != null){
+        ArrayAdapter adaptado= new ArrayAdapter(this,android.R.layout.simple_list_item_1,lmateinfo);
 
-            textListadoOfertas.setText(parametrosXD.getString("Materias"));
+        consultarlistaofertas();
+
+    }
+
+    private void consultarlistaofertas() {
+        SQLiteDatabase db = conec.getReadableDatabase();
+
+        Oferta_Lab materiaO;
+
+        String sql ="Select * from oferta_lab inner join oferta_materia on oferta_lab.cod_ofer_mate=oferta_materia.cod_ofer_mate inner join ciclo  on oferta_materia.ciclo_anio= ciclo.ciclo_anio where ciclo.estado_ciclo=='1' and oferta_materia.cod_materia =="+codmate;
+
+        Cursor cursor =db.rawQuery(sql,null);
+        listalabo = new ArrayList<Oferta_Lab>();
+        while (cursor.moveToNext()) {
+            materiaO = new Oferta_Lab();
+            materiaO.setId_ofer_lab(cursor.getInt(0));
+            materiaO.setCod_lugar(cursor.getString(1));
+            materiaO.setCod_ofert_mate(cursor.getInt(2));
+            materiaO.setIsss(cursor.getString(3));
+            materiaO.setNum_grup_lab(cursor.getString(4));
+
+            listalabo.add(materiaO);
+        }
+        obtenerlista();
+    }
+    private void obtenerlista() {
+
+        lmateinfo=new ArrayList<String>();
+
+        for(int i=0; i<listalabo.size();i++)
+        {
+            lmateinfo.add(listalabo.get(i).getCod_lugar() +"   "+listalabo.get(i).getIsss()+" "+listalabo.get(i).getNum_grup_lab());
         }
     }
 
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String val= (String) parent.getItemAtPosition(position); //Onda del video
-        Intent nuevoFormXDp = new Intent(Admin_ListadoOfertas.this, Admin_AntesGTGL.class);  //Onda del video
-        nuevoFormXDp.putExtra("Ofertas",val);
-        startActivity(nuevoFormXDp);
+    public void nuevOferrta(View view) {
+        Intent intn= new Intent(Admin_ListadoOfertas.this,Admin_AntesGTGL.class);
+        intn.putExtra("ofercodmate", codmate);
+        intn.putExtra("cicloofer",codciclo);
+        intn.putExtra("codoferta",codoferta);
+        startActivity(intn);
 
     }
-
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        AlertDialog.Builder DialogoAlerta= new AlertDialog.Builder(this);
-        DialogoAlerta.setTitle("ELIMINAR OFERTA CICLO");
-        DialogoAlerta.setMessage("¿Realmente desea eliminiar esta oferta ciclo?");
-        DialogoAlerta.setCancelable(false);
-        DialogoAlerta.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
-
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                aceptar();
-            }
-        });
-        DialogoAlerta.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                cancelar();
-            }
-        });
-        DialogoAlerta.show();
-        return true;
-    }
-
-    private void aceptar() {
-        Toast.makeText(this,"FUNCION SIIII~",Toast.LENGTH_SHORT).show();
-    }
-
-    private void cancelar(){
-        finish();
-    }
-
-
-    public void nuevaOferta(View view) {
-        Intent OfertaBoton = null;
-        switch (view.getId()) {
-
-            case R.id.btnNuevaOferta:
-                OfertaBoton = new Intent(Admin_ListadoOfertas.this, Admin_AntesGTGL.class);
-                break;
-        }
-        startActivity(OfertaBoton);
-    }
-
 }

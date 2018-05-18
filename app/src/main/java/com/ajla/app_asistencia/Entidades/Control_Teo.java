@@ -9,14 +9,25 @@ import java.sql.Date;
 
 public class Control_Teo implements Serializable{
 
-    private Character asistencia;
+    private String asistencia;
     private Integer id_insTeo;
     private Date fecha_teo;
 
-    public Control_Teo(Character asistencia, Integer id_insTeo, Date fecha_teo) {
+    public Control_Teo() {
+    }
+
+    public Control_Teo(String asistencia, Integer id_insTeo, Date fecha_teo) {
         this.asistencia = asistencia;
         this.id_insTeo = id_insTeo;
         this.fecha_teo = fecha_teo;
+    }
+
+    public String getAsistencia() {
+        return asistencia;
+    }
+
+    public void setAsistencia(String asistencia) {
+        this.asistencia = asistencia;
     }
 
     public Integer getId_insTeo() {
@@ -34,14 +45,4 @@ public class Control_Teo implements Serializable{
     public void setFecha_teo(Date fecha_teo) {
         this.fecha_teo = fecha_teo;
     }
-
-    public Character getAsistencia() {
-        return asistencia;
-    }
-
-    public void setAsistencia(Character asistencia) {
-        this.asistencia = asistencia;
-    }
 }
-
-

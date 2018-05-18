@@ -2,11 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ajla.app_asistencia">
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,58 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:label="@string/Login_Titulo">
-
-
-
-        </activity>
-        <activity android:name=".jefeMenu" />
-        <activity android:name=".jefeListDiferidos" />
-        <activity android:name=".jefeDiferido" />
-
-
-
-        <activity android:name=".DocenteMateria" />
-        <activity android:name=".DocenteAsistenciaGT" />
-        <activity android:name=".DocenteEvaluacion" />
-        <activity android:name=".DocenteAsistenciaGL" />
-        <activity android:name=".DocenteAsistenciaEVA" >
-
-
-
-        </activity>
-        <activity android:name=".AdminAsignarMaterias"/>
-
-        <activity android:name=".DocenteMenu">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Admin_Materias_Menu" />
-        <activity android:name=".Admin_Inicio" >
-
-
-        </activity>
-        <activity android:name=".Alumno_Menu"
-            android:label="@string/Menu"/>
-        <activity android:name=".Alumno_Materia"
-            android:parentActivityName=".Alumno_Menu"
-            android:label="@string/Selc_Materia">
-
+        <activity android:name=".Admin_Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
-
-
         </activity>
-        <activity android:name=".Alumno_Inscripcion"
-            android:parentActivityName=".Alumno_Materia"
-            android:label="@string/Incriba"/>
-
-
-
         <activity android:name=".AdminMateriasCatalogoActivity" />
         <activity android:name=".AdminMestroActivity" />
         <activity android:name=".MaestroNuevoActivity" />
@@ -77,18 +29,13 @@
         <activity android:name=".Admin_Asig_GT" />
         <activity android:name=".Admin_Asig_GL" />
         <activity android:name=".Admin_AntesGTGL" />
-        <activity android:name=".Admin_ListadoOfertas"></activity>
         <activity android:name=".AdminAlumnoActivity" />
-        <activity android:name=".AdminMaestroActualizarActivity"></activity>
-
-
-        <activity android:name=".Alumno_diferido"
-            android:parentActivityName=".Alumno_Menu"
-            android:label="@string/Sol_dife"/>
-
-        <activity android:name=".Alumno_Asistencia"
-            android:parentActivityName=".Alumno_Menu"
-            android:label="@string/Lista_asis"/>
+        <activity android:name=".AdminMaestroActualizarActivity" />
+        <activity android:name=".AdminMateriasActualizarActivity" />
+        <activity android:name=".AdminLocalesActivity" />
+        <activity android:name=".AdminLocalesActualizarActivity" />
+        <activity android:name=".AdminLocalNuevoActivity" />
+        <activity android:name=".Admin_ListadoOfertas"></activity>
     </application>
 
 </manifest>

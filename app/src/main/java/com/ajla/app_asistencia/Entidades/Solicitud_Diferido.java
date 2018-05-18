@@ -1,7 +1,6 @@
 package com.ajla.app_asistencia.Entidades;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 /**
  * Created by Gloria Maria on 14/5/2018.
@@ -10,19 +9,52 @@ import java.sql.Date;
 public class Solicitud_Diferido implements Serializable{
 
  private Integer id_solicitud;
- private Character carnet;
- private Character isss;
- private Character periodo;
- private Date fecha_examen;
- private String  estado;
+ private String estado;
+ private String carnet;
+ private String isss;
+ private String periodo;
 
-    public Solicitud_Diferido(Integer id_solicitud, Character carnet, Character isss, Character periodo, Date fecha_examen, String estado) {
+    public Solicitud_Diferido() {
+    }
+
+    public Solicitud_Diferido(Integer id_solicitud, String estado, String carnet, String isss, String periodo) {
         this.id_solicitud = id_solicitud;
+        this.estado = estado;
         this.carnet = carnet;
         this.isss = isss;
         this.periodo = periodo;
-        this.fecha_examen = fecha_examen;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getCarnet() {
+        return carnet;
+    }
+
+    public void setCarnet(String carnet) {
+        this.carnet = carnet;
+    }
+
+    public String getIsss() {
+        return isss;
+    }
+
+    public void setIsss(String isss) {
+        this.isss = isss;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
     }
 
     public Integer getId_solicitud() {
@@ -33,43 +65,5 @@ public class Solicitud_Diferido implements Serializable{
         this.id_solicitud = id_solicitud;
     }
 
-    public Character getCarnet() {
-        return carnet;
-    }
 
-    public void setCarnet(Character carnet) {
-        this.carnet = carnet;
-    }
-
-    public Character getIsss() {
-        return isss;
-    }
-
-    public void setIsss(Character isss) {
-        this.isss = isss;
-    }
-
-    public Character getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(Character periodo) {
-        this.periodo = periodo;
-    }
-
-    public Date getFecha_examen() {
-        return fecha_examen;
-    }
-
-    public void setFecha_examen(Date fecha_examen) {
-        this.fecha_examen = fecha_examen;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
 }

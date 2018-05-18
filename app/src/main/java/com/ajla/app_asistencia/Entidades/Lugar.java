@@ -10,9 +10,12 @@ import java.io.Serializable;
 public class Lugar implements Serializable{
     private String cod_Lugar;
     private Integer capacidad;
-    private Character tipo;
+    private String tipo;
 
-    public Lugar(String cod_Lugar, Integer capacidad, Character tipo) {
+    public Lugar() {
+    }
+
+    public Lugar(String cod_Lugar, Integer capacidad, String tipo) {
         this.cod_Lugar = cod_Lugar;
         this.capacidad = capacidad;
         this.tipo = tipo;
@@ -34,11 +37,11 @@ public class Lugar implements Serializable{
         this.capacidad = capacidad;
     }
 
-    public Character getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(Character tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 }

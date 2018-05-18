@@ -29,7 +29,7 @@
             android:textSize="13sp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/isss"
+            android:id="@+id/isssnuevo"
             android:layout_width="270dp"
             android:layout_height="34dp"
             android:layout_alignParentEnd="true"
@@ -52,7 +52,7 @@
             android:textSize="13sp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/nomdoce"
+            android:id="@+id/nomdocenuevo"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -75,7 +75,7 @@
             android:textSize="13sp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/apedoce"
+            android:id="@+id/apedocenuevo"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -97,7 +97,7 @@
                 android:textSize="13sp"
                 android:textStyle="bold" />
             <EditText
-                android:id="@+id/contradoce"
+                android:id="@+id/contradocenuevo"
                 android:layout_width="270dp"
                 android:layout_height="34dp"
                 android:layout_alignParentEnd="true"

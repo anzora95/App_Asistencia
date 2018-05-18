@@ -43,7 +43,8 @@ public class Admin_Inicio extends AppCompatActivity {
         imagen3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Admin_Inicio.this, "locales", Toast.LENGTH_SHORT).show();
+                Intent menu= new Intent(Admin_Inicio.this, AdminLocalesActivity.class);
+                startActivity(menu);
 
             }
         });

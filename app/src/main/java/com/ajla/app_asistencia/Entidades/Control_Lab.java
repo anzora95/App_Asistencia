@@ -9,30 +9,33 @@ import java.sql.Date;
 
 public class Control_Lab implements Serializable{
 
-    private Character asistencia;
-    private Integer id_insLab;
+    private String asistencia;
+    private Integer id_inslab;
     private Date fecha_lab;
 
-    public Control_Lab(Character asistencia, Integer id_insLab, Date fecha_lab) {
+    public Control_Lab() {
+    }
+
+    public Control_Lab(String asistencia, Integer id_inslab, Date fecha_lab) {
         this.asistencia = asistencia;
-        this.id_insLab = id_insLab;
+        this.id_inslab = id_inslab;
         this.fecha_lab = fecha_lab;
     }
 
-    public Character getAsistencia() {
+    public String getAsistencia() {
         return asistencia;
     }
 
-    public void setAsistencia(Character asistencia) {
+    public void setAsistencia(String asistencia) {
         this.asistencia = asistencia;
     }
 
-    public Integer getId_insLab() {
-        return id_insLab;
+    public Integer getId_inslab() {
+        return id_inslab;
     }
 
-    public void setId_insLab(Integer id_insLab) {
-        this.id_insLab = id_insLab;
+    public void setId_inslab(Integer id_inslab) {
+        this.id_inslab = id_inslab;
     }
 
     public Date getFecha_lab() {

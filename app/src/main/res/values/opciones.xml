@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listatipo">
+        <item>L</item>
+        <item>S</item>
+    </string-array>
+
+    <string-array name="listalabdis">
+        <item>GL1</item>
+        <item>GL2</item>
+        <item>GL3</item>
+        <item>GL4</item>
+        <item>GL5</item>
+        <item>GL6</item>
+        <item>GL7</item>
+        <item>GL8</item>
+        <item>GL9</item>
+        <item>GL10</item>
+        <item>GL11</item>
+        <item>GL12</item>
+        <item>GL13</item>
+        <item>GL14</item>
+        <item>GL15</item>
+
+    </string-array>
+    <string-array name="listateodis">
+        <item>GT1</item>
+        <item>GT2</item>
+        <item>GT3</item>
+        <item>GT4</item>
+        <item>GT5</item>
+        <item>GT6</item>
+
+    </string-array>
+
+</resources>

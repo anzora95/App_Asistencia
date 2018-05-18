@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminMateriasActualizarActivity">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:stretchColumns="1"
+        >
+
+    <TableRow
+        android:layout_marginTop="30dp"
+        >
+
+        <TextView
+            android:text="@string/codmateria"
+            />
+
+        <EditText
+            android:id="@+id/actcodmate"
+            android:inputType="text"
+            android:maxLength="30"
+            android:enabled="false"/>
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:text="@string/nommateria" />
+
+        <EditText
+            android:id="@+id/actnommateria"
+            android:inputType="text"
+            android:maxLength="30"
+            />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+
+            android:text="@string/area"
+           />
+
+        <Spinner
+            android:id="@+id/spinnerdepactmateria"
+
+            />
+
+
+
+    </TableRow>
+    </TableLayout>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/guardar"
+            android:id="@+id/btnguardar"
+            android:onClick="guardar"/>
+
+
+</LinearLayout>

@@ -12,6 +12,9 @@ public class Docente implements Serializable{
     private String ape_doce;
     private String contra_doce;
 
+    public Docente() {
+    }
+
     public Docente(String isss, String nom_doce, String ape_doce, String contra_doce) {
         this.isss = isss;
         this.nom_doce = nom_doce;
