@@ -270,6 +270,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO lugar values('LCOM4',20,'L')");
         db.execSQL("INSERT INTO materia values('PDM115','45','Progración para dispositivos móviles')");
         db.execSQL("INSERT INTO materia values('HDP115','45','Herramientas de productividad')");
+        db.execSQL("INSERT INTO materia values('IAI115','67','Introduccion a la informatica')");
         db.execSQL("INSERT INTO jefe_departamento values('23','678234042','014-018','je1')");
         db.execSQL("INSERT INTO jefe_departamento values('45','456789908','014-018','je2')");
         db.execSQL("INSERT INTO jefe_departamento values('67','908756789','014-018','je3')");
