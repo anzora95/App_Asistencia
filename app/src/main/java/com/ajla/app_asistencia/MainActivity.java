@@ -1,6 +1,8 @@
 package com.ajla.app_asistencia;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -27,11 +29,15 @@ public class MainActivity extends AppCompatActivity {
     ConexionSQLiteHelper conect;
     EditText edt_nom;
     EditText edt_pass;
-
+    SharedPreferences pref;
+    String name;
+    String pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         edt_nom=findViewById(R.id.ET_nom_log);
         edt_pass=findViewById(R.id.ET_pass_log);
@@ -42,13 +48,15 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pref= getSharedPreferences("dato",Context.MODE_PRIVATE);
 
-             String name= edt_nom.getText().toString();
-             String pass = edt_pass.getText().toString();
+             name= edt_nom.getText().toString();
+             pass = edt_pass.getText().toString();
 
             if( validacionAlumno(name,pass)){
 
-                lanzarActi_alum();
+                lanzarActi_alum(name);
+
 
             }else if(validacioAdmin(name,pass)){//validacion administrador
 
@@ -58,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }else if(validacionDocente(name,pass)){//validacion docente
 
                 lanzarActi_Docente();
+
 
             }else if(validacionJefe(name,pass)){//validacion de jefe de departamento
                 lanzarActi_Jefe();
@@ -111,7 +120,10 @@ public class MainActivity extends AppCompatActivity {
 
     //----------LANZA ACTIVITY ALUMNO MENU-------------
 
-    private void lanzarActi_alum(){
+    private void lanzarActi_alum(String name){
+
+        SharedPreferences.Editor editor= pref.edit();
+        editor.putString("nombre",name);
 
         Intent inte_alum = new Intent(MainActivity.this,Alumno_Menu.class);
         inte_alum.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
