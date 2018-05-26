@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminAsignarMaterias">
+
+    <TextView
+        android:id="@+id/textociclo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulociclo"
+        />
+
+    <EditText
+        android:id="@+id/editciclo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ciclo par o impar"/>
+
+    <Spinner
+        android:id="@+id/spinermaterias"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/spinercoordinador"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="coordinadores"
+
+        >
+
+
+    </Spinner>
+
+    <Button
+        android:id="@+id/botonguardaradmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonguardar"/>
+
+
+
+
+</LinearLayout>

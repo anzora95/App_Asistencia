@@ -48,4 +48,44 @@
     <string name="listalumno">Lista de Alumnos</string>
     <string name="carnet">Carnet</string>
     <string name="msjingresoalumno">Ingreso de nuevo alumno</string>
+    <string name="title_activity_jefe_menu">jefeMenu</string>
+    <string name="textview">TextView</string>
+    <string name="TituloListaMaterias">Lista de Materias</string>
+    <string name="TituloListaDiferidos">Lista de Diferidos</string>
+    <string name="motivo">Motivo</string>
+    <string name="botonaceptar">Aceptar</string>
+    <string name="botondenegar">Denegar</string>
+    <string name="Textogruposteoricos">Grupos Teoricos </string>
+    <string name="Textogruposlaboratorio">Grupos de Laboratorio </string>
+    <string name="Textoevaluaciones">Evaluaciones </string>
+    <string name="Textoegt">Grupos Teoricos </string>
+    <string name="Textoegl">Grupos de Laboratorio </string>
+    <string name="evaluaciones">Evaluaciones </string>
+    <string name="editnombre">Nombre</string>
+    <string name="editmateria">Materia</string>
+    <string name="editmotivo">Motivo</string>
+    <color name="background"></color>
+    <string name="botonasignarevaluacion">asignar evaluacion pal coordinador</string>
+    <string name="textoevaluacion">evaluacion</string>
+    <string name="edittextonumevaluaciones">evaluacion numero</string>
+    <string name="textofecha">fecha</string>
+    <string name="botonguardar">guardar</string>
+    <string name="btnasistencia">pasar asistencia</string>
+    <string name="title_activity_admin_asignar_materias">Sign in</string>
+    <string name="titulociclo">ciclo</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+
 </resources>

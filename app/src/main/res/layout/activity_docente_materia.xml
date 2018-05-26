@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DocenteMateria"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/gt"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/Textogruposteoricos"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="30dp" />
+
+    <ListView
+        android:id="@+id/listagt"
+        android:layout_width="360dp"
+        android:layout_height="100dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="30dp" />
+
+    <TextView
+        android:id="@+id/gl"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/Textogruposlaboratorio"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <ListView
+        android:id="@+id/listagl"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <TextView
+        android:id="@+id/eva"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/Textoevaluaciones"/>
+
+    <ListView
+        android:id="@+id/listaeva"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="204dp"/>
+
+    <Button
+        android:id="@+id/botonasignar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonasignarevaluacion"/>
+
+!--https://www.youtube.com/watch?v=1E9y9JNnS1I
+</LinearLayout>
+
+
