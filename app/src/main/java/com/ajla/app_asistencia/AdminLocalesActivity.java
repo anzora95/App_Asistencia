@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,6 +34,9 @@ public class AdminLocalesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_locales);
+
+        ActionBar action=getSupportActionBar();
+        action.setDisplayHomeAsUpEnabled(true);
 
         conn = new ConexionSQLiteHelper(getApplicationContext());
         listLocales = (ListView) findViewById(R.id.listLocales);
@@ -93,9 +97,11 @@ public class AdminLocalesActivity extends AppCompatActivity {
         SQLiteDatabase db=conn.getWritableDatabase();
         db.execSQL("Delete from lugar where cod_lugar='"+puente+"'");
         Toast.makeText(this,"Lugar eliminado", Toast.LENGTH_SHORT).show();
+        Intent P= new Intent(this,AdminLocalesActivity.class);
+        startActivity(P);
     }
     private void cancelar() {
-        finish();
+        closeContextMenu();
     }
 
 

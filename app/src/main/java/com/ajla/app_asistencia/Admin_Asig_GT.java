@@ -23,7 +23,7 @@ public class Admin_Asig_GT extends AppCompatActivity {
     ArrayList listadedocentes, listadelugares;
     ArrayList<Docente> ld;
     ArrayList<Lugar> ll;
-    String  codmate,codciclo,codoferta;
+    String  cod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +36,7 @@ public class Admin_Asig_GT extends AppCompatActivity {
         conec= new ConexionSQLiteHelper(getApplicationContext());
 
         Bundle listav = getIntent().getExtras();
-        codmate = listav.getString("codigodelamateria");
-        codciclo= listav.getString("ciclodelaoferta");
-        codoferta = listav.getString("codigodelaoferta");
+        cod = listav.getString("codigodelaoferta");
 
         consultarlistadocentes();
         consultarlistalocales();
@@ -148,7 +146,7 @@ public class Admin_Asig_GT extends AppCompatActivity {
         }
     }
 
-    public void onGL(View view) {
+    public void onGT(View view) {
 
 
 
@@ -159,22 +157,14 @@ public class Admin_Asig_GT extends AppCompatActivity {
         SQLiteDatabase db= conec.getWritableDatabase();
 
         if (db!=null){
-            ContentValues registro= new ContentValues();
 
-            registro.put("cod_lugar",puentelocal);
-            registro.put("cod_ofer_mate",codmate);
-            registro.put("isss",puentedoce);
-            registro.put("num_grupo_teo",puentegl);
-            long i=db.insert("oferta_teo",null,registro);
+            db.execSQL("insert into oferta_teo values (null, '"+ puentelocal+"', '"+ cod+"','"+puentedoce+"','"+puentegl+"' )");
+
+            finish();
 
 
-            if(i>0){
-                Toast.makeText(Admin_Asig_GT.this,"Guardado con exito",Toast.LENGTH_SHORT).show();
-            }
         }
+
     }
 
-    public void onGT(View view) {
-        Toast.makeText(Admin_Asig_GT.this,"Grupo Guardado con exito",Toast.LENGTH_SHORT).show();
-    }
 }

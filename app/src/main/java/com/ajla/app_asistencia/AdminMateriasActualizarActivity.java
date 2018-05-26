@@ -1,6 +1,7 @@
 package com.ajla.app_asistencia;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -105,6 +106,9 @@ public class AdminMateriasActualizarActivity extends AppCompatActivity {
             registro.put("nom_materia", nombre_mate);
             registro.put("cod_area", datospuente);
             db.execSQL("UPDATE materia set nom_materia = '" + nombre_mate + "' , cod_area = '" + datospuente + "' where cod_materia == '" + codigo_mate + "'");
+
+            Intent p= new Intent(this, AdminMateriasCatalogoActivity.class);
+            startActivity(p);
         }
     }
 }

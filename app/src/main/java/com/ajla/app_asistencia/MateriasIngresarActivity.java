@@ -110,6 +110,8 @@ public class MateriasIngresarActivity extends AppCompatActivity {
 
             if(i>0){
                 Toast.makeText(MateriasIngresarActivity.this,"Guardado con exito",Toast.LENGTH_SHORT).show();
+                Intent p= new Intent(this, AdminMateriasCatalogoActivity.class);
+                startActivity(p);
             }
         }
 
