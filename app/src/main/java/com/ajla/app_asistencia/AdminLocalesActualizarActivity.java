@@ -1,6 +1,7 @@
 package com.ajla.app_asistencia;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,6 +67,8 @@ public class AdminLocalesActualizarActivity extends AppCompatActivity {
             registro.put("tipo",datospuente);
             db.execSQL("UPDATE lugar set capacidad = '" + capacidad + "' , tipo = '" + datospuente + "' where cod_lugar == '" + codigo + "'");
 
+            Intent p= new Intent(this, AdminLocalesActivity.class);
+            startActivity(p);
         }
 
     }

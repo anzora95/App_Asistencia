@@ -275,7 +275,9 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO jefe_departamento values('45','456789908','014-018','je2')");
         db.execSQL("INSERT INTO jefe_departamento values('67','908756789','014-018','je3')");
         db.execSQL("INSERT INTO ciclo values ( '1',1,'1')");
-        db.execSQL("INSERT INTO oferta_materia values ('1','PDM115','123456789','2')");
+        db.execSQL("INSERT INTO oferta_materia values (1,'PDM115','123456789','2')");
+        db.execSQL("INSERT INTO oferta_materia values (null,'HDP115','908756789','2')");
+        db.execSQL("INSERT INTO oferta_lab values (1,'LCOM4',1,'678234042','GL1')");
 
 
 

@@ -1,6 +1,7 @@
 package com.ajla.app_asistencia;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -71,6 +72,8 @@ public class AdminLocalNuevoActivity extends AppCompatActivity {
 
             if(i>0){
                 Toast.makeText(AdminLocalNuevoActivity.this,"Guardado con exito",Toast.LENGTH_SHORT).show();
+                Intent p= new Intent(this, AdminLocalesActivity.class);
+                startActivity(p);
             }
         }
     }

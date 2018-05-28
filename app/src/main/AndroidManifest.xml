@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".Admin_Materias_Menu" />
+        <activity
+            android:name=".Admin_Materias_Menu"
+            android:parentActivityName=".Admin_Inicio">
+            <meta-data
+                android:name="android.support.parent_activity"
+                android:value=".Admin_Inicio" />
+        </activity>
         <activity android:name=".Admin_Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,24 +24,67 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdminMateriasCatalogoActivity" />
-        <activity android:name=".AdminMestroActivity" />
+        <activity
+            android:name=".AdminMateriasCatalogoActivity"
+            android:parentActivityName=".Admin_Materias_Menu">
+            <meta-data
+                android:name="android.support.parent_activity"
+                android:value=".Admin_Materias_Menu" />
+        </activity>
+        <activity
+            android:name=".AdminMestroActivity"
+            android:parentActivityName=".Admin_Inicio">
+            <meta-data
+                android:name="android.support.parent_activity"
+                android:value=".Admin_Inicio" />
+        </activity>
         <activity android:name=".MaestroNuevoActivity" />
         <activity android:name=".MateriasMenuActivity" />
         <activity android:name=".MateriasIngresarActivity" />
         <activity android:name=".AsignacionMateriasActivity" />
-        <activity android:name=".Admin_Menu_Oferta_Ciclo" />
-        <activity android:name=".Admin_Registro_GL_GT" />
+        <activity
+            android:name=".Admin_Menu_Oferta_Ciclo"
+            android:parentActivityName=".Admin_Materias_Menu">
+            <meta-data
+                android:name="android.support.parent_activity"
+                android:value=".Admin_Materias_Menu" />
+        </activity>
+        <activity
+            android:name=".Admin_Registro_GL_GT"
+            android:parentActivityName=".Admin_Menu_Oferta_Ciclo">
+            <meta-data
+                android:name="android.support.parent_activity"
+                android:value=".Admin_Menu_Oferta_Ciclo" />
+        </activity>
         <activity android:name=".Admin_Asig_GT" />
         <activity android:name=".Admin_Asig_GL" />
         <activity android:name=".Admin_AntesGTGL" />
-        <activity android:name=".AdminAlumnoActivity" />
+        <activity android:name=".AdminAlumnoActivity"
+            android:parentActivityName=".Admin_Inicio">
+            <meta-data
+                android:name="android.support.parent_activity"
+                android:value=".Admin_Inicio" />
+        </activity>
         <activity android:name=".AdminMaestroActualizarActivity" />
         <activity android:name=".AdminMateriasActualizarActivity" />
-        <activity android:name=".AdminLocalesActivity" />
+        <activity
+            android:name=".AdminLocalesActivity"
+            android:parentActivityName=".Admin_Inicio">
+            <meta-data
+                android:name="android.support.parent_activity"
+                android:value=".Admin_Inicio" />
+        </activity>
         <activity android:name=".AdminLocalesActualizarActivity" />
         <activity android:name=".AdminLocalNuevoActivity" />
-        <activity android:name=".Admin_ListadoOfertas"></activity>
+        <activity
+            android:name=".Admin_ListadoOfertas"
+            android:parentActivityName=".Admin_AntesGTGL">
+            <meta-data
+                android:name="android.support.parent_activity"
+                android:value=".Admin_AntesGTGL" />
+        </activity>
+        <activity android:name=".AdminAlumnoActualizarActivity" />
+        <activity android:name=".AdminAlumnoNuevoActivity"></activity>
     </application>
 
 </manifest>

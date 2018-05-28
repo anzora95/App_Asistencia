@@ -1,6 +1,7 @@
 package com.ajla.app_asistencia;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -59,8 +60,10 @@ EditText editcontra;
             registro.put("contra_doce", contra_doce);
            db.execSQL("UPDATE docente set nom_doce = '"+nombre_doce+"' , apel_doce = '"+apellido_doce+"' ,contra_doce= '"+contra_doce+"' where isss == '"+codigo_isss+"'");
 
-
+            Intent p= new Intent(this, AdminMestroActivity.class);
+            startActivity(p);
 
         }
+
     }
 }

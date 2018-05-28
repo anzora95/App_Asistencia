@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,12 +27,16 @@ public class AdminMestroActivity extends AppCompatActivity {
     ArrayList<Docente> listamaestro;
     String puen;
     String tv_isss,tv_nombre,tv_apellido,tv_contraseña;
+    ArrayAdapter adaptado;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_mestro);
+
+        ActionBar action=getSupportActionBar();
+        action.setDisplayHomeAsUpEnabled(true);
 
         conec= new ConexionSQLiteHelper(getApplicationContext());
 
@@ -42,7 +47,7 @@ public class AdminMestroActivity extends AppCompatActivity {
 
 
 
-        ArrayAdapter adaptado= new ArrayAdapter(this,android.R.layout.simple_list_item_1,lmaesinfo);
+        adaptado = new ArrayAdapter(this,android.R.layout.simple_list_item_1,lmaesinfo);
         listViewMaestros.setAdapter(adaptado);
 
         listViewMaestros.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -133,16 +138,20 @@ public class AdminMestroActivity extends AppCompatActivity {
     private void aceptar() {
         SQLiteDatabase db=conec.getWritableDatabase();
         db.execSQL("Delete from docente where isss='"+puen+"'");
-        Toast.makeText(this,"FUNCIONA SIIII~", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Registro eliminado", Toast.LENGTH_SHORT).show();
+        Intent P= new Intent(this,AdminMestroActivity.class);
+        startActivity(P);
     }
 
     private void cancelar(){
-        finish();
+
+        closeContextMenu();
     }
 
     public void agregar(View view) {
         Intent lista = new Intent(AdminMestroActivity.this, MaestroNuevoActivity.class);  //Onda del video
         startActivity(lista);
+
 
     }
 }

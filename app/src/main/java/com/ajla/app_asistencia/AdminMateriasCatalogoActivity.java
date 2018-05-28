@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,6 +34,9 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_materias_catalogo);
+
+        ActionBar action=getSupportActionBar();
+        action.setDisplayHomeAsUpEnabled(true);
 
         conec= new ConexionSQLiteHelper(getApplicationContext());
 
@@ -127,12 +131,14 @@ public class AdminMateriasCatalogoActivity extends AppCompatActivity {
         SQLiteDatabase db=conec.getWritableDatabase();
         db.execSQL("Delete from materia where cod_materia='"+puente+"'");
         Toast.makeText(this,"Materia eliminada", Toast.LENGTH_SHORT).show();
+        Intent P= new Intent(this,AdminMateriasCatalogoActivity.class);
+        startActivity(P);
 
 
     }
 
     private void cancelar() {
-        finish();
+        closeContextMenu();
     }
 
     public void agregar(View view) {

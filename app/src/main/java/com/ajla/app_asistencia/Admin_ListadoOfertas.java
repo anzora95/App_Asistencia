@@ -3,6 +3,7 @@ package com.ajla.app_asistencia;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.ajla.app_asistencia.Entidades.Listagrupos;
 import com.ajla.app_asistencia.Entidades.Materia;
 import com.ajla.app_asistencia.Entidades.Oferta_Lab;
 import com.ajla.app_asistencia.Entidades.Oferta_Materia;
@@ -20,11 +23,13 @@ import java.util.ArrayList;
 
 public class Admin_ListadoOfertas extends AppCompatActivity {
     ConexionSQLiteHelper conec;
-    String datospuente, codmate,codciclo,codoferta;
-    ListView listViewmate;
+    String codferta;
+    ListView listViewmate,listViewgt;
     ArrayList<String> lmateinfo;
-    ArrayList<Oferta_Lab> listalabo;
-    ArrayList<Oferta_Teo> listateo;
+    ArrayList<String> lmateinfogt;
+    ArrayList<Listagrupos> listalabo;
+    ArrayList<Listagrupos> listateo;
+
 
 
     @Override
@@ -32,39 +37,75 @@ public class Admin_ListadoOfertas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin__listado_ofertas);
 
+        ActionBar action=getSupportActionBar();
+        action.setDisplayHomeAsUpEnabled(true);
+
+
 
         conec = new ConexionSQLiteHelper(this);
 
-        listViewmate = (ListView) findViewById(R.id.listOfertas);
-
-
         Bundle listav = getIntent().getExtras();
-        codmate = listav.getString("cod_mate");
-        codciclo= listav.getString("ciclo");
-        codoferta = listav.getString("cod_oferta");
+        codferta = listav.getString("codoferta");
+
+        listViewmate = (ListView) findViewById(R.id.listOfertasGL);
+        consultarlistaofertas();
+
+        listViewgt = (ListView) findViewById(R.id.listOfertasGT);
+        consultarlistaofertasG();
 
         ArrayAdapter adaptado= new ArrayAdapter(this,android.R.layout.simple_list_item_1,lmateinfo);
+        listViewmate.setAdapter(adaptado);
 
-        consultarlistaofertas();
+        ArrayAdapter adaptado2= new ArrayAdapter(this,android.R.layout.simple_list_item_1,lmateinfogt);
+        listViewgt.setAdapter(adaptado2);
+
+
+
+    }
+
+    private void consultarlistaofertasG() {
+        SQLiteDatabase db = conec.getReadableDatabase();
+
+        Listagrupos materiaO;
+
+        String sql ="Select oferta_teo.num_grup_teo, docente.nom_doce, oferta_teo.cod_lugar from oferta_teo inner join docente on oferta_teo.isss=docente.isss where oferta_teo.cod_ofer_mate == "+codferta+"";
+
+        Cursor cursor =db.rawQuery(sql,null);
+        listateo = new ArrayList<Listagrupos>();
+        while (cursor.moveToNext()) {
+            materiaO = new Listagrupos();
+            materiaO.setGrupo(cursor.getString(0));
+            materiaO.setDocente(cursor.getString(1));
+            materiaO.setSalon(cursor.getString(2));
+            listateo.add(materiaO);
+        }
+        obtenerlistaT();
+    }
+
+    private void obtenerlistaT() {
+        lmateinfogt=new ArrayList<String>();
+
+        for(int i=0; i<listateo.size();i++)
+        {
+            lmateinfogt.add(listateo.get(i).getGrupo() +"   "+listateo.get(i).getDocente()+" "+listateo.get(i).getSalon());
+        }
 
     }
 
     private void consultarlistaofertas() {
         SQLiteDatabase db = conec.getReadableDatabase();
 
-        Oferta_Lab materiaO;
+        Listagrupos materiaO;
 
-        String sql ="Select * from oferta_lab inner join oferta_materia on oferta_lab.cod_ofer_mate=oferta_materia.cod_ofer_mate inner join ciclo  on oferta_materia.ciclo_anio= ciclo.ciclo_anio where ciclo.estado_ciclo=='1' and oferta_materia.cod_materia =="+codmate;
+        String sql ="Select oferta_lab.num_grup_lab, docente.nom_doce, oferta_lab.cod_lugar from oferta_lab inner join docente on oferta_lab.isss=docente.isss where oferta_lab.cod_ofer_mate == "+codferta+"";
 
         Cursor cursor =db.rawQuery(sql,null);
-        listalabo = new ArrayList<Oferta_Lab>();
+        listalabo = new ArrayList<Listagrupos>();
         while (cursor.moveToNext()) {
-            materiaO = new Oferta_Lab();
-            materiaO.setId_ofer_lab(cursor.getInt(0));
-            materiaO.setCod_lugar(cursor.getString(1));
-            materiaO.setCod_ofert_mate(cursor.getInt(2));
-            materiaO.setIsss(cursor.getString(3));
-            materiaO.setNum_grup_lab(cursor.getString(4));
+            materiaO = new Listagrupos();
+            materiaO.setGrupo(cursor.getString(0));
+            materiaO.setDocente(cursor.getString(1));
+            materiaO.setSalon(cursor.getString(2));
 
             listalabo.add(materiaO);
         }
@@ -76,15 +117,13 @@ public class Admin_ListadoOfertas extends AppCompatActivity {
 
         for(int i=0; i<listalabo.size();i++)
         {
-            lmateinfo.add(listalabo.get(i).getCod_lugar() +"   "+listalabo.get(i).getIsss()+" "+listalabo.get(i).getNum_grup_lab());
+            lmateinfo.add(listalabo.get(i).getGrupo() +"   "+listalabo.get(i).getDocente()+" "+listalabo.get(i).getSalon());
         }
     }
 
     public void nuevOferrta(View view) {
         Intent intn= new Intent(Admin_ListadoOfertas.this,Admin_AntesGTGL.class);
-        intn.putExtra("ofercodmate", codmate);
-        intn.putExtra("cicloofer",codciclo);
-        intn.putExtra("codoferta",codoferta);
+        intn.putExtra("codioferta",codferta);
         startActivity(intn);
 
     }

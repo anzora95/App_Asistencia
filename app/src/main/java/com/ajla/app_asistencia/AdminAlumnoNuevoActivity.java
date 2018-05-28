@@ -7,27 +7,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class MaestroNuevoActivity extends AppCompatActivity {
-    EditText tv_isss,tv_nombre,tv_apellido,tv_contraseña;
-
+public class AdminAlumnoNuevoActivity extends AppCompatActivity {
+    EditText tv_isss, tv_nombre, tv_apellido, tv_contraseña;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maestro_nuevo);
-
-        tv_isss = (EditText) findViewById(R.id.isssnuevo);
-        tv_nombre = (EditText) findViewById(R.id.nomdocenuevo);
-        tv_apellido = (EditText) findViewById(R.id.apedocenuevo);
-        tv_contraseña = (EditText) findViewById(R.id.contradocenuevo);
-
-
+        setContentView(R.layout.activity_admin_alumno_nuevo);
+        tv_isss = (EditText) findViewById(R.id.carnetnuevo);
+        tv_nombre = (EditText) findViewById(R.id.nomalumnnuevo);
+        tv_apellido = (EditText) findViewById(R.id.apealumnuevo);
+        tv_contraseña = (EditText) findViewById(R.id.contraalumnuevo);
     }
 
-    public void guardar(View view) {
+    public void guardarAl(View view) {
         String codigo_isss = tv_isss.getText().toString();
         String nombre_doce = tv_nombre.getText().toString();
         String apellido_doce = tv_apellido.getText().toString();
@@ -38,20 +33,18 @@ public class MaestroNuevoActivity extends AppCompatActivity {
         SQLiteDatabase db = co.getWritableDatabase();
         if (db != null) {
             ContentValues registro = new ContentValues();
-            registro.put("isss", codigo_isss);
-            registro.put("nom_doce", nombre_doce);
-            registro.put("apel_doce", apellido_doce);
-            registro.put("contra_doce", contra_doce);
-            long i = db.insert("docente", null, registro);
+            registro.put("carnet", codigo_isss);
+            registro.put("nom_alum", nombre_doce);
+            registro.put("apel_alum", apellido_doce);
+            registro.put("contra_alum", contra_doce);
+            long i = db.insert("alumno", null, registro);
 
 
             if (i > 0) {
-                Toast.makeText(MaestroNuevoActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
-                Intent p= new Intent(MaestroNuevoActivity.this, AdminMestroActivity.class);
+                Toast.makeText(AdminAlumnoNuevoActivity.this, "Guardado con exito", Toast.LENGTH_SHORT).show();
+                Intent p = new Intent(AdminAlumnoNuevoActivity.this, AdminAlumnoActivity.class);
                 startActivity(p);
             }
-
-
         }
     }
 }

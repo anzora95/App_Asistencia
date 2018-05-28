@@ -25,7 +25,7 @@ public class Admin_Asig_GL extends AppCompatActivity {
     ArrayList listadedocentes, listadelugares;
     ArrayList<Docente> ld;
     ArrayList<Lugar> ll;
-    String  codmate,codciclo,codoferta;
+    String  codi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +39,7 @@ public class Admin_Asig_GL extends AppCompatActivity {
         conec= new ConexionSQLiteHelper(getApplicationContext());
 
         Bundle listav = getIntent().getExtras();
-        codmate = listav.getString("codigodelamateria");
-        codciclo= listav.getString("ciclodelaoferta");
-        codoferta = listav.getString("codigodelaoferta");
+        codi = listav.getString("codigodelaoferta");
 
         consultarlistadocentes();
         consultarlistalocales();
@@ -161,18 +159,11 @@ public class Admin_Asig_GL extends AppCompatActivity {
         SQLiteDatabase db= conec.getWritableDatabase();
 
         if (db!=null){
-            ContentValues registro= new ContentValues();
+            db.execSQL("insert into oferta_lab values (null, '"+ puentelocal+"', '"+ codi+"','"+puentedoce+"','"+puentegl+"' )");
+            finish();
 
-            registro.put("cod_lugar",puentelocal);
-            registro.put("cod_ofer_mate",codmate);
-            registro.put("isss",puentedoce);
-            registro.put("num_grup_lab",puentegl);
-            long i=db.insert("oferta_lab",null,registro);
-
-
-            if(i>0){
-                Toast.makeText(Admin_Asig_GL.this,"Guardado con exito",Toast.LENGTH_SHORT).show();
-            }
         }
+
     }
+
 }

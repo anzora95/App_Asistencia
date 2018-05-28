@@ -57,10 +57,10 @@ public class Admin_Materias_Menu extends AppCompatActivity {
         db.execSQL("UPDATE ciclo set estado_ciclo = '0' where estado2 == '1'");
         db.execSQL("INSERT INTO ciclo values ('1', ?,'1')");
         Intent MMenu = new Intent(Admin_Materias_Menu.this,Admin_Menu_Oferta_Ciclo.class);
-startActivity(MMenu);
+        startActivity(MMenu);
     }
 
     private void cancelar() {
-        Toast.makeText(this, "FUNCIONA SIIII~", Toast.LENGTH_SHORT).show();
+        closeContextMenu();
     }
 }
