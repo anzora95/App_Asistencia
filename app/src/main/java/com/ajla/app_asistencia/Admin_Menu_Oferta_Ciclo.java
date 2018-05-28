@@ -26,7 +26,7 @@ public class Admin_Menu_Oferta_Ciclo extends AppCompatActivity {
                 RGtGl = new Intent(Admin_Menu_Oferta_Ciclo.this, Admin_Registro_GL_GT.class);
                 break;
              case R.id.btnAsigMaterias:
-                // RGtGl = new Intent(Admin_Menu_Oferta_Ciclo.this,AdminAsignarMaterias.class);
+                RGtGl = new Intent(Admin_Menu_Oferta_Ciclo.this,AdminAsignarMaterias.class);
         }
         startActivity(RGtGl);
     }

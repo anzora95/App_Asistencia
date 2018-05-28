@@ -58,6 +58,8 @@ public class Admin_Materias_Menu extends AppCompatActivity {
         db.execSQL("INSERT INTO ciclo values ('1', ?,'1')");
         Intent MMenu = new Intent(Admin_Materias_Menu.this,Admin_Menu_Oferta_Ciclo.class);
         startActivity(MMenu);
+
+
     }
 
     private void cancelar() {

@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:enabled="false"
         android:inputType="textPersonName"
         android:text="@string/editnombre" />
 
@@ -22,21 +23,24 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/editmateria"
+        android:enabled="false"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="69dp" />
-
     <EditText
-        android:id="@+id/idmotivo"
+        android:id="@+id/idapedif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:enabled="false"
         android:inputType="textPersonName"
-        android:text="@string/motivo"
+        android:text="@string/editmateria"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="156dp" />
+        tools:layout_editor_absoluteY="69dp" />
+
+
 
     <Button
-        android:id="@+id/aceptar"
+        android:id="@+id/aceptardife"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/botonaceptar"
@@ -45,7 +49,7 @@
         tools:layout_editor_absoluteY="304dp" />
 
     <Button
-        android:id="@+id/denegar"
+        android:id="@+id/denegardife"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/botondenegar"

@@ -8,25 +8,56 @@
     tools:context=".AdminAsignarMaterias">
 
     <TextView
-        android:id="@+id/textociclo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/titulociclo"
-        />
+        android:text="@string/adminasignacion"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/negro"/>
 
-    <EditText
-        android:id="@+id/editciclo"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ciclo par o impar"/>
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp">
+    <TextView
+
+
+        android:text="@string/materias"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/negro" />
+
 
     <Spinner
         android:id="@+id/spinermaterias"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-
-
     </Spinner>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp">
+    <TextView
+
+
+        android:text="@string/Coordinador"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/negro" />
+
 
     <Spinner
         android:id="@+id/spinercoordinador"
@@ -39,10 +70,14 @@
 
     </Spinner>
 
+    </RelativeLayout>
+
     <Button
         android:id="@+id/botonguardaradmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="agregarasig"
+        android:layout_marginStart="135dp"
         android:text="@string/botonguardar"/>
 
 

@@ -36,7 +36,7 @@
     <string name="msjasignaciongrupos">Seleecione el tipo de grupos a crear</string>
     <string name="agregarcate">+ Agregar</string>
     <string name="agregarmate">+ Agregar</string>
-    <string name="adminasignacion">Seleccione solo las materias que estarán disponibles este ciclo</string>
+    <string name="adminasignacion">Seleccione la materias que estará disponibles este ciclo y su respectivo coordinador</string>
     <string name="msjbienvenidaadmin">¡Bienvenido Administrador!</string>
     <string name="msjeditmaterias">Editar materias</string>
     <string name="listlocales">Lista de Locales</string>
@@ -44,7 +44,7 @@
     <string name="capacidad">Capacidad</string>
     <string name="tipo">Tipo</string>
     <string name="listaoderta">Lista de ofertas de esta materia</string>
-    <string name="verlistado">Ver lista de los grupos creados</string>
+    <string name="verlistado">Ver lista de materias</string>
     <string name="listalumno">Lista de Alumnos</string>
     <string name="carnet">Carnet</string>
     <string name="msjingresoalumno">Ingreso de nuevo alumno</string>
@@ -86,6 +86,10 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="materias">Materia</string>
+    <string name="Coordinador">Coordinador</string>
+    <string name="listateodoce">Lista de Teorico</string>
+    <string name="listalabdoce">Lista de Laboratorios</string>
 
 
 </resources>

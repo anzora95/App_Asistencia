@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DocenteLabActivity">
+    <TextView
+        android:id="@+id/gl"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/Textogruposlaboratorio"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <ListView
+        android:id="@+id/listagl"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+</LinearLayout>

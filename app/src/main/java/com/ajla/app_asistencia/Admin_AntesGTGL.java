@@ -39,8 +39,8 @@ public class Admin_AntesGTGL extends AppCompatActivity {
                 startActivity(GTGLBoton);
                 break;
             case R.id.btnGuardadMateria:
-                GTGLBoton= new Intent(Admin_AntesGTGL.this, Admin_ListadoOfertas.class);
-                GTGLBoton.putExtra("codoferta",codoferta);
+                GTGLBoton = new Intent (Admin_AntesGTGL.this,Admin_Registro_GL_GT.class);
+
                 startActivity(GTGLBoton);
         }
 

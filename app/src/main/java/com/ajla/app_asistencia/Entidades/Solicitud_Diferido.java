@@ -1,6 +1,7 @@
 package com.ajla.app_asistencia.Entidades;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by Gloria Maria on 14/5/2018.
@@ -13,6 +14,15 @@ public class Solicitud_Diferido implements Serializable{
  private String carnet;
  private String isss;
  private String periodo;
+ private Date fecha;
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
 
     public Solicitud_Diferido() {
     }

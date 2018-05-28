@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.*;
 
+import com.ajla.app_asistencia.Entidades.ListaOfertas;
+import com.ajla.app_asistencia.Entidades.Listagrupos;
 import com.ajla.app_asistencia.Entidades.Materia;
 import com.ajla.app_asistencia.Entidades.Oferta_Materia;
 
@@ -21,7 +23,7 @@ public class Admin_Registro_GL_GT extends AppCompatActivity {
     ListView listMaterias_View; //Declaracion de variables.
     ConexionSQLiteHelper conec;
     ArrayList<String> liMate;
-    ArrayList<Oferta_Materia> listadoMate;
+    ArrayList<ListaOfertas> listadoMate;
     String cod_oferta;
 
 
@@ -41,7 +43,7 @@ public class Admin_Registro_GL_GT extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                cod_oferta= listadoMate.get(position).getCod_ofer_mate().toString();
+                cod_oferta= listadoMate.get(position).getCodmateria().toString();
 
                 Intent oferta = new Intent(Admin_Registro_GL_GT.this, Admin_ListadoOfertas.class);
                 oferta.putExtra("codoferta",cod_oferta);
@@ -58,18 +60,17 @@ public class Admin_Registro_GL_GT extends AppCompatActivity {
 
         SQLiteDatabase db = conec.getReadableDatabase();
 
-        Oferta_Materia materiaO;
+        ListaOfertas materiaO;
 
-        String sql ="Select * from oferta_materia inner join ciclo on oferta_materia.ciclo_anio= ciclo.ciclo_anio where ciclo.estado_ciclo=='1'";
+        String sql ="Select oferta_materia.cod_ofer_mate, oferta_materia.cod_materia, docente.nom_doce from oferta_materia inner join docente on oferta_materia.isss=docente.isss inner join ciclo on oferta_materia.ciclo_anio= ciclo.ciclo_anio where ciclo.estado_ciclo=='1'";
 
         Cursor cursor =db.rawQuery(sql,null);
-        listadoMate = new ArrayList<Oferta_Materia>();
+        listadoMate = new ArrayList<ListaOfertas>();
         while (cursor.moveToNext()) {
-            materiaO = new Oferta_Materia();
-            materiaO.setCod_ofer_mate(cursor.getInt(0));
-            materiaO.setCod_materia(cursor.getString(1));
-            materiaO.setIsss(cursor.getString(2));
-            materiaO.setCiclo_anio(cursor.getString(3));
+            materiaO = new ListaOfertas();
+            materiaO.setCodmateria(cursor.getString(0));
+            materiaO.setCodoferta(cursor.getString(1));
+            materiaO.setCoordinador(cursor.getString(2));
 
             listadoMate.add(materiaO);
             }
@@ -83,7 +84,7 @@ public class Admin_Registro_GL_GT extends AppCompatActivity {
 
         for(int i=0; i<listadoMate.size();i++)
         {
-            liMate.add(listadoMate.get(i).getCod_materia()+"   "+listadoMate.get(i).getIsss());
+            liMate.add(listadoMate.get(i).getCodoferta()+"   "+listadoMate.get(i).getCoordinador());
             }
 
 
