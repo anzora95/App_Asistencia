@@ -114,7 +114,6 @@ public class Admin_Asig_GL extends AppCompatActivity {
 
     private void obtenerlistadocentes() {
         listadedocentes =new ArrayList<String>();
-        listadedocentes.add("Seleccione");
         for(int i=0; i<ld.size();i++)
         {
             listadedocentes.add(ld.get(i).getNom_doce());

@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ajla.app_asistencia">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +14,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity" />
 
-    </activity>
+        <activity android:name=".jefeMenu" />
+        <activity android:name=".jefeListDiferidos" />
+        <activity android:name=".jefeDiferido" />
+        <activity android:name=".DocenteMenu"/>
+
+        <activity android:name=".DocenteMateria" />
+        <activity android:name=".DocenteAsistenciaGT" />
+        <activity android:name=".DocenteEvaluacion" />
+        <activity android:name=".DocenteAsistenciaGL" />
+        <activity android:name=".DocenteAsistenciaEVA" />
+        <activity android:name=".AdminAsignarMaterias">
+
         <activity
             android:name=".Admin_Materias_Menu"
             android:parentActivityName=".Admin_Inicio">
@@ -19,8 +35,14 @@
                 android:name="android.support.parent_activity"
                 android:value=".Admin_Inicio" />
         </activity>
-        <activity android:name=".Admin_Inicio"/>
+        <activity android:name=".Admin_Inicio">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".AdminMateriasCatalogoActivity"
             android:parentActivityName=".Admin_Materias_Menu">
@@ -96,6 +118,8 @@
         <activity android:name=".Alumno_Inscripcion"/>
         <activity android:name=".Alumno_diferido"/>
         <activity android:name=".Alumno_Asistencia"/>
+        <activity android:name=".AdminAlumnoNuevoActivity" />
+        <activity android:name=".DocenteLabActivity"></activity>
     </application>
 
 </manifest>

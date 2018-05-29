@@ -130,9 +130,9 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         //Constantes campos tabla Solicitud Diferido
         public static final String TABLA_SOLICITUD_DIFERIDO="solicitud_diferido";
         public static final String CAMPO_ID_SOLICITUD="id_solicitud";
-        public static final String CAMPO_CARNET_SOLDI=CAMPO_ISSS;//FALTA PADRE
-        public static final String CAMPO_ISSS_SOLDI=CAMPO_PERIODO;//FALTA PADRE
-        public static final String CAMPO_PERIODO_SOLDI=CAMPO_CARNET;//FALTA PADRE
+        public static final String CAMPO_CARNET_SOLDI=CAMPO_CARNET;//FALTA PADRE
+        public static final String CAMPO_ISSS_SOLDI=CAMPO_ISSS;//FALTA PADRE
+        public static final String CAMPO_PERIODO_SOLDI=CAMPO_PERIODO;//FALTA PADRE
         public static final String CAMPO_FECHA_EXAM_SOLDI=CAMPO_FECHA_EXAM;//FALTA PADRE
         public static final String CAMPO_ESTADODIFE="estado";
 
@@ -181,7 +181,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         private static final String CREAR_TABLA_CONTROL_LAB ="CREATE TABLE "+DatosTabla.TABLA_CONTROL_LAB+" ("+DatosTabla.CAMPO_FECHA_LAB_CONTROL+" DATE NOT NULL,"+DatosTabla.CAMPO_ID_INSLAB_CONTROL+" INTEGER NOT NULL,"+DatosTabla.CAMPO_ASITENCIA_LAB+" CHAR(1) NOT NULL,"+"CONSTRAINT UC_controlab_v UNIQUE (fecha_lab,id_insLab),"+"CONSTRAINT fk_contrllab_v FOREIGN KEY (fecha_lab) REFERENCES asis_lab(fecha_lab),"+"CONSTRAINT fk_controlab_v1 FOREIGN KEY (id_insLab) REFERENCES inscripcion_lab(id_insLab))";
         private static final String CREAR_TABLA_ASIS_TEO ="CREATE TABLE "+DatosTabla.TABLA_ASIS_TEO+" ("+DatosTabla.CAMPO_FECHA_TEO+" DATE PRIMARY KEY NOT NULL,"+DatosTabla.CAMPO_ID_OFER_TEO_ASISTEO+" INTEGER NOT NULL,"+"CONSTRAINT fk_asisteo FOREIGN KEY (id_ofer_teo) REFERENCES oferta_teo(id_ofer_teo))";
         private static final String CREAR_TABLA_CONTROL_TEO ="CREATE TABLE "+DatosTabla.TABLA_CONTROL_TEO+" ("+DatosTabla.CAMPO_FECHA_TEO_CONTROL+" DATE NOT NULL,"+DatosTabla.CAMPO_ID_INSTEO_CONTROL+" INTEGER NOT NULL,"+DatosTabla.CAMPO_ASITENCIA_TEO+" CHAR(1) NOT NULL,"+"CONSTRAINT UC_controlteo_v UNIQUE (fecha_teo,id_insTeo),"+"CONSTRAINT fk_contrteo_v FOREIGN KEY (fecha_teo) REFERENCES asis_teo(fecha_teo),"+"CONSTRAINT fk_controteo_v1 FOREIGN KEY (id_insTeo) REFERENCES inscripcion_teo(id_insTeo))";
-        private static final String CREAR_TABLA_ASIS_EXAM ="CREATE TABLE "+DatosTabla.TABLA_ASIS_EXAM+" ("+DatosTabla.CAMPO_FECHA_EXAM+" DATE PRIMARY KEY,"+DatosTabla.CAMPO_COD_OFER_MATE_ASISEXA+" INTEGER NOT NULL,"+CAMPO_COD_EVA+" VARCHAR(6) NOT NULL,"+"CONSTRAINT fk_asisexam FOREIGN KEY (cod_ofer_mate) REFERENCES oferta_materia(cod_ofert_mate))";
+        private static final String CREAR_TABLA_ASIS_EXAM ="CREATE TABLE "+DatosTabla.TABLA_ASIS_EXAM+" ("+DatosTabla.CAMPO_FECHA_EXAM+" DATE PRIMARY KEY,"+DatosTabla.CAMPO_COD_OFER_MATE_ASISEXA+" INTEGER NOT NULL,"+CAMPO_COD_EVA+" VARCHAR(6) NOT NULL,"+"CONSTRAINT fk_asisexam FOREIGN KEY (cod_ofer_mate) REFERENCES oferta_materia(cod_ofer_mate))";
         private static final String CREAR_TABLA_CONTROL_EXAM ="CREATE TABLE "+DatosTabla.TABLA_CONTROL_EXAM+" ("+DatosTabla.CAMPO_FECHA_EXAM_CONTROL+" DATE NOT NULL,"+DatosTabla.CAMPO_CARNET_CONTROL_EXAM+" CHAR(7) NOT NULL,"+DatosTabla.CAMPO_ASISTENCIA_EXAM+" CHAR(1) NOT NULL,"+"CONSTRAINT UC_controlexa_v UNIQUE (fecha_exam,carnet),"+"CONSTRAINT fk_contrexam_v FOREIGN KEY (fecha_exam) REFERENCES asis_exam(fecha_exam),"+"CONSTRAINT fk_controexam_v1 FOREIGN KEY (carnet) REFERENCES alumno(carnet))";
         private static final String CREAR_TABLA_SOLICITUD_DIFERIDO ="CREATE TABLE "+DatosTabla.TABLA_SOLICITUD_DIFERIDO+" ("+CAMPO_ID_SOLICITUD+" INTEGER PRIMARY KEY AUTOINCREMENT,"+DatosTabla.CAMPO_CARNET_SOLDI+" CHAR(7) NOT NULL,"+DatosTabla.CAMPO_ISSS_SOLDI+" CHAR(9) NOT NULL,"+DatosTabla.CAMPO_PERIODO_SOLDI+" CHAR(7) NOT NULL,"+DatosTabla.CAMPO_FECHA_EXAM_SOLDI+" DATE NOT NULL,"+DatosTabla.CAMPO_ESTADODIFE+" VARCHAR(1) NOT NULL,"+"CONSTRAINT fk_dife_v1 FOREIGN KEY (carnet) REFERENCES alumno(carnet),"+"CONSTRAINT fk_dife_v2 FOREIGN KEY (isss) REFERENCES jefe_departamento(isss),"+"CONSTRAINT fk_dife_v3 FOREIGN KEY (periodo) REFERENCES jefe_departamento(periodo))";
         private static final String CREAR_TABLA_OPCIONCRUD ="CREATE TABLE "+DatosTabla.TABLA_OPCIONCRUD+" ("+DatosTabla.CAMPO_IDOPCION+" INTEGER PRIMARY KEY AUTOINCREMENT,"+DatosTabla.CAMPO_DESOPCION+" VARCHAR(30) NOT NULL,"+DatosTabla.CAMPO_NUMCRUD+" INTEGER NOT NULL)";
@@ -259,6 +259,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         //DATOS INICIALES
         db.execSQL("INSERT INTO administrador values ( 'admin', 'admin')");
         db.execSQL("INSERT INTO alumno values ('MG14006', 'Lilian Patricia', 'Martinez Galdamez', 'prueba')");
+        db.execSQL("INSERT INTO alumno values ('MM14006', 'Lilian Patricia', 'Martinez Galdamez', 'pru')");
         db.execSQL("INSERT INTO docente values ('123456789','Eduardo José','Recinos Merino','sobri')");
         db.execSQL("INSERT INTO docente values ('456789908','Ing.Bladimir','Día Campos','contra1')");
         db.execSQL("INSERT INTO docente values ('678234042','Ing. Elmer','Carballo','contra2')");
@@ -275,9 +276,16 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO jefe_departamento values('45','456789908','014-018','je2')");
         db.execSQL("INSERT INTO jefe_departamento values('67','908756789','014-018','je3')");
         db.execSQL("INSERT INTO ciclo values ( '1',1,'1')");
-        db.execSQL("INSERT INTO oferta_materia values (1,'PDM115','123456789','2')");
-        db.execSQL("INSERT INTO oferta_materia values (null,'HDP115','908756789','2')");
-        db.execSQL("INSERT INTO oferta_lab values (1,'LCOM4',1,'678234042','GL1')");
+        db.execSQL("INSERT INTO oferta_materia values (1,'PDM115','123456789','1')");
+        db.execSQL("INSERT INTO oferta_materia values (null,'HDP115','123456789','1')");
+        db.execSQL("INSERT INTO asis_exam values('2017-07-01',1,'EP1')");
+        db.execSQL("INSERT INTO asis_exam values('2017-07-02',2,'EP1')");
+        db.execSQL("INSERT INTO solicitud_diferido values(1,'MG14006','456789908','014-018','2017-07-01',0)");
+        db.execSQL("INSERT INTO solicitud_diferido values(null,'MM14006','456789908','014-018','2017-07-02',0)");
+        db.execSQL("INSERT INTO oferta_teo values(null,'F1312',1,'456789908','GT1')");
+        db.execSQL("INSERT INTO oferta_teo values(null,'F1312',1,'456789908','GT2')");
+        db.execSQL("INSERT INTO oferta_lab values (null,'LCOM4',2,'456789908','GL1')");
+        db.execSQL("INSERT INTO oferta_lab values (null,'LCOM4',1,'456789908','GL2')");
 
 
 

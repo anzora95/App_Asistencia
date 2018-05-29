@@ -1,5 +1,34 @@
 <resources>
     <string name="app_name">App_Asistencia</string>
+    <string name="listmaestros">Listado De Catedráticos</string>
+    <string name="nuevocatedratico">Formulario para nuevo catedrático</string>
+    <string name="isss">ISSS</string>
+    <string name="listmaterias">Lista de Materias</string>
+    <string name="msjingresomaterias">Ingreso de Nueva Materia</string>
+    <string name="codmateria">Codigo de Materia</string>
+    <string name="nommateria">Nombre de Materia</string>
+    <string name="area">Departamento</string>
+    <string name="guardar">Guardar</string>
+    <string name="Buton2">Maestro</string>
+    <string name="Buton1">Materia</string>
+    <string name="Buton3">Locales</string>
+    <string name="Buton4">Alumno</string>
+    <string name="Buton5">Area</string>
+    <string name="BotonCatalogoMaterias">Catalogo de Materias</string>
+    <string name="BotonOfertaCiclo">Oferta del Ciclo</string>
+    <string name="BotonAsignacionMaterias">Asignacion de Materias</string>
+    <string name="BotonRegistroGLGT">Registro de grupos teoricos y grupos laboratios</string>
+    <string name="grupoT">Grupo Teorico</string>
+    <string name="grupoL">Grupo Laboratorio</string>
+    <string name="guardarOfer">Guardar</string>
+    <string name="GT">GT</string>
+    <string name="DocenteGT">Docente GT</string>
+    <string name="localGT">Local GT</string>
+    <string name="GuardarGT">Guardar</string>
+    <string name="GL">GL</string>
+    <string name="DocenteGL">Docente GL</string>
+    <string name="localGL">Laboratorio</string>
+    <string name="GuardarGL">Guardar</string>
     <string name="btn_log">Iniciar Sesion</string>
     <string name="name">Nombre</string>
     <string name="pass">Contraseña</string>
@@ -95,7 +124,7 @@
     <string name="msjasignaciongrupos">Seleecione el tipo de grupos a crear</string>
     <string name="agregarcate">+ Agregar</string>
     <string name="agregarmate">+ Agregar</string>
-    <string name="adminasignacion">Seleccione solo las materias que estarán disponibles este ciclo</string>
+    <string name="adminasignacion">Seleccione la materias que estará disponibles este ciclo y su respectivo coordinador</string>
     <string name="msjbienvenidaadmin">¡Bienvenido Administrador!</string>
     <string name="msjeditmaterias">Editar materias</string>
     <string name="listlocales">Lista de Locales</string>
@@ -103,10 +132,54 @@
     <string name="capacidad">Capacidad</string>
     <string name="tipo">Tipo</string>
     <string name="listaoderta">Lista de ofertas de esta materia</string>
-    <string name="verlistado">Ver lista de los grupos creados</string>
+    <string name="verlistado">Ver lista de materias</string>
     <string name="listalumno">Lista de Alumnos</string>
     <string name="carnet">Carnet</string>
     <string name="msjingresoalumno">Ingreso de nuevo alumno</string>
+    <string name="title_activity_jefe_menu">jefeMenu</string>
+    <string name="textview">TextView</string>
+    <string name="TituloListaMaterias">Lista de Materias</string>
+    <string name="TituloListaDiferidos">Lista de Diferidos</string>
+    <string name="motivo">Motivo</string>
+    <string name="botonaceptar">Aceptar</string>
+    <string name="botondenegar">Denegar</string>
+    <string name="Textogruposteoricos">Grupos Teoricos </string>
+    <string name="Textogruposlaboratorio">Grupos de Laboratorio </string>
+    <string name="Textoevaluaciones">Evaluaciones </string>
+    <string name="Textoegt">Grupos Teoricos </string>
+    <string name="Textoegl">Grupos de Laboratorio </string>
+    <string name="evaluaciones">Evaluaciones </string>
+    <string name="editnombre">Nombre</string>
+    <string name="editmateria">Materia</string>
+    <string name="editmotivo">Motivo</string>
+    <color name="background"></color>
+    <string name="botonasignarevaluacion">asignar evaluacion pal coordinador</string>
+    <string name="textoevaluacion">evaluacion</string>
+    <string name="edittextonumevaluaciones">evaluacion numero</string>
+    <string name="textofecha">fecha</string>
+    <string name="botonguardar">guardar</string>
+    <string name="btnasistencia">pasar asistencia</string>
+    <string name="title_activity_admin_asignar_materias">Sign in</string>
+    <string name="titulociclo">ciclo</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="materias">Materia</string>
+    <string name="Coordinador">Coordinador</string>
+    <string name="listateodoce">Lista de Teorico</string>
+    <string name="listalabdoce">Lista de Laboratorios</string>
+
+
 
 <!-- Titulos de las pantallas -->
 
