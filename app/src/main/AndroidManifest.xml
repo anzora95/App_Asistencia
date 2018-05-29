@@ -14,7 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 
         <activity android:name=".jefeMenu" />
         <activity android:name=".jefeListDiferidos" />
@@ -28,6 +34,12 @@
         <activity android:name=".DocenteAsistenciaEVA" />
         <activity android:name=".AdminAsignarMaterias">
 
+
+
+
+
+    </activity>
+
         <activity
             android:name=".Admin_Materias_Menu"
             android:parentActivityName=".Admin_Inicio">
@@ -37,11 +49,7 @@
         </activity>
         <activity android:name=".Admin_Inicio">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".AdminMateriasCatalogoActivity"
@@ -109,16 +117,10 @@
 
         <activity android:name=".Alumno_Materia">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Alumno_Inscripcion"/>
         <activity android:name=".Alumno_diferido"/>
         <activity android:name=".Alumno_Asistencia"/>
-        <activity android:name=".AdminAlumnoNuevoActivity" />
         <activity android:name=".DocenteLabActivity"></activity>
     </application>
 

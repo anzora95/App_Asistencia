@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ConexionSQLiteHelper conect;
     EditText edt_nom;
     EditText edt_pass;
-    SharedPreferences pref;
+
     String name;
     String pass;
     @Override
@@ -48,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pref= getSharedPreferences("dato",Context.MODE_PRIVATE);
+
 
              name= edt_nom.getText().toString();
              pass = edt_pass.getText().toString();
+
+
 
             if( validacionAlumno(name,pass)){
 
@@ -65,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
 
             }else if(validacionDocente(name,pass)){//validacion docente
 
-                lanzarActi_Docente();
+
+
+                lanzarActi_Docente(name,pass);
 
 
             }else if(validacionJefe(name,pass)){//validacion de jefe de departamento
@@ -75,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this,"datos equivocados",Toast.LENGTH_LONG).show();
             }
+
 
 
             }
@@ -122,8 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void lanzarActi_alum(String name){
 
-        SharedPreferences.Editor editor= pref.edit();
-        editor.putString("nombre",name);
+
 
         Intent inte_alum = new Intent(MainActivity.this,Alumno_Menu.class);
         inte_alum.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -214,10 +218,17 @@ public class MainActivity extends AppCompatActivity {
 
     //--------------------------------------------LANZAR ACTIVITY DOCENTE-------------------------
 
-    private void lanzarActi_Docente(){
+    private void lanzarActi_Docente(String u, String p){
+
+        if(!edt_nom.equals(null)){
+
+            String nom = edt_nom.getText().toString();
+
+        }
 
         Intent inte_doc = new Intent(MainActivity.this,DocenteMenu.class);
         inte_doc.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        inte_doc.putExtra("nombre",edt_nom.getText().toString());
         startActivity(inte_doc);
 
     }
@@ -267,6 +278,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
+
 
 
 

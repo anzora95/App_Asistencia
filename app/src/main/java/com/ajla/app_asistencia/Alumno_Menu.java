@@ -15,7 +15,7 @@ public class Alumno_Menu extends AppCompatActivity {
     Button btn_asist_alumenu;
     Button btn_dif_alumen;
     TextView txtV_alumn_mennu;
-    SharedPreferences pref;
+
 
 
     @Override
@@ -23,15 +23,14 @@ public class Alumno_Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alumno__menu);
 
-        pref= getSharedPreferences("dato", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
 
         btn_inscri_Alumenu=findViewById(R.id.btn_inscri_Alumenu);
         btn_dif_alumen=findViewById(R.id.btn_dif_alumen);
         btn_asist_alumenu=findViewById(R.id.btn_asist_alumenu);
         txtV_alumn_mennu=findViewById(R.id.txtV_alumn_mennu);
 
-        txtV_alumn_mennu.setText(pref.getString("nombre",""));
-        Toast.makeText(Alumno_Menu.this,"El nombre es : "+pref.getString("nombre",""),Toast.LENGTH_LONG).show();
+
 
         btn_inscri_Alumenu.setOnClickListener(new View.OnClickListener() {
             @Override
