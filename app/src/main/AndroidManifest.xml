@@ -22,8 +22,15 @@
         </intent-filter>
     </activity>
 
-        <activity android:name=".jefeMenu" />
-        <activity android:name=".jefeListDiferidos" />
+        <activity android:name=".jefeMenu" >
+
+        </activity>
+        <activity android:name=".jefeListDiferidos"
+        android:parentActivityName=".jefeMenu"/>
+        <meta-data
+            android:name="android.support.parent_activity"
+            android:value=".jefeMenu" />
+
         <activity android:name=".jefeDiferido" />
         <activity android:name=".DocenteMenu"/>
 
@@ -33,12 +40,6 @@
         <activity android:name=".DocenteAsistenciaGL" />
         <activity android:name=".DocenteAsistenciaEVA" />
         <activity android:name=".AdminAsignarMaterias">
-
-
-
-
-
-    </activity>
 
         <activity
             android:name=".Admin_Materias_Menu"
@@ -117,10 +118,12 @@
 
         <activity android:name=".Alumno_Materia">
 
+
         </activity>
         <activity android:name=".Alumno_Inscripcion"/>
         <activity android:name=".Alumno_diferido"/>
         <activity android:name=".Alumno_Asistencia"/>
+        <activity android:name=".AdminAlumnoNuevoActivity" />
         <activity android:name=".DocenteLabActivity"></activity>
     </application>
 

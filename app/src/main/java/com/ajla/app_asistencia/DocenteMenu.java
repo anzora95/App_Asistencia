@@ -23,11 +23,16 @@ public class DocenteMenu extends AppCompatActivity{
     ArrayList<String> lmateriasinfo,lmateriasinfolab;
     ArrayList<Materia> listaMaterias,listaMlabs;
 
-    String issslogin = "456789908";
+    String codigoisss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+  Bundle listav = getIntent().getExtras();
+        codigoisss = listav.getString("nombre");
+
+
         setContentView(R.layout.activity_docente_menu);
         conn = new ConexionSQLiteHelper(getApplicationContext());
 
@@ -79,7 +84,7 @@ public class DocenteMenu extends AppCompatActivity{
 
 
 
-        String sql="SELECT DISTINCT materia.cod_materia FROM materia INNER JOIN oferta_materia ON materia.cod_materia=oferta_materia.cod_materia INNER JOIN oferta_lab ON oferta_materia.cod_ofer_mate=oferta_lab.cod_ofer_mate where  oferta_lab.isss='"+issslogin+"'";
+        String sql="SELECT DISTINCT materia.cod_materia FROM materia INNER JOIN oferta_materia ON materia.cod_materia=oferta_materia.cod_materia INNER JOIN oferta_lab ON oferta_materia.cod_ofer_mate=oferta_lab.cod_ofer_mate where  oferta_lab.isss='"+codigoisss+"'";
         Cursor cursor=db.rawQuery(sql,null);
 
         while(cursor.moveToNext()){
@@ -109,7 +114,7 @@ public class DocenteMenu extends AppCompatActivity{
         listaMaterias = new ArrayList<Materia>();
 
 
-        String sql="SELECT DISTINCT materia.cod_materia FROM materia INNER JOIN oferta_materia ON materia.cod_materia=oferta_materia.cod_materia INNER JOIN oferta_teo ON oferta_materia.cod_ofer_mate=oferta_teo.cod_ofer_mate  where  oferta_teo.isss='"+issslogin+"'";
+        String sql="SELECT DISTINCT materia.cod_materia FROM materia INNER JOIN oferta_materia ON materia.cod_materia=oferta_materia.cod_materia INNER JOIN oferta_teo ON oferta_materia.cod_ofer_mate=oferta_teo.cod_ofer_mate  where  oferta_teo.isss='"+codigoisss+"'";
         Cursor cursor=db.rawQuery(sql,null);
 
         while(cursor.moveToNext()){
