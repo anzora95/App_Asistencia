@@ -37,10 +37,10 @@ public class Asis_Lab implements Serializable{
     }
 
     public Integer getId_ofer_lab() {
-        return id_ofer_lab;
+        return id_oferta_lab;
     }
 
     public void setId_ofer_lab(Integer id_ofer_lab) {
-        this.id_ofer_lab = id_ofer_lab;
+        this.id_oferta_lab = id_ofer_lab;
     }
 }

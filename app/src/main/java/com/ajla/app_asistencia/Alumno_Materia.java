@@ -28,7 +28,7 @@ public class Alumno_Materia extends AppCompatActivity {
     Button btn_guarda;
     ConexionSQLiteHelper conect;
     ArrayList <String> lmateinfo;
-    ArrayList<Oferta_Materia> listadoMate;
+    ArrayList<Materia> listadoMate;
 
 
     @Override
@@ -37,7 +37,7 @@ public class Alumno_Materia extends AppCompatActivity {
         setContentView(R.layout.activity_alumno__materia);
 
 
-        ListView chl = (ListView) findViewById(R.id.check_ls);
+        ListView chl = findViewById(R.id.check_ls);
         btn_guarda=findViewById(R.id.btn_guardar_materiaAlum);
         conect=new ConexionSQLiteHelper(getApplication());
 
@@ -45,7 +45,7 @@ public class Alumno_Materia extends AppCompatActivity {
         chl.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
         consultarlistamaterias();
-        //String[] item = {"Alejandra Campos", "Andres MC", "Nathaly MC", "Eliana RM", "Nehemias M"};
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.txt_lan, lmateinfo);
         chl.setAdapter(adapter);
         chl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -77,17 +77,16 @@ public class Alumno_Materia extends AppCompatActivity {
 
         SQLiteDatabase db = conect.getReadableDatabase();
 
-        Oferta_Materia materiaO;
+        Materia materiaO;
 
-        String sql ="Select * from oferta_materia inner join ciclo on oferta_materia.ciclo_anio= ciclo.ciclo_anio where ciclo.estado_ciclo=='1'";
+        String sql ="Select * from materia";
 
         Cursor cursor =db.rawQuery(sql,null);
-        listadoMate = new ArrayList<Oferta_Materia>();
+        cursor.moveToFirst();
+        listadoMate = new ArrayList<Materia>();
         while (cursor.moveToNext()) {
-            materiaO = new Oferta_Materia(null,null,null,null);
-            materiaO.setCod_ofer_mate(cursor.getInt(0));
-
-
+            materiaO = new Materia();
+            materiaO.setNom_materia(cursor.getString(2));
             listadoMate.add(materiaO);
         }
         obtenerlista();
@@ -96,12 +95,13 @@ public class Alumno_Materia extends AppCompatActivity {
 
     private void obtenerlista() {
 
-
+        lmateinfo=new ArrayList<>();
 
         for(int i=0; i<listadoMate.size();i++)
         {
 
-            lmateinfo.add(listadoMate.get(i).getCod_materia().toString());
+            String nom = listadoMate.get(i).getNom_materia();
+            lmateinfo.add(nom);
 
         }
     }

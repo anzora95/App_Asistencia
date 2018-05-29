@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+
+    </activity>
         <activity
             android:name=".Admin_Materias_Menu"
             android:parentActivityName=".Admin_Inicio">
@@ -17,13 +19,8 @@
                 android:name="android.support.parent_activity"
                 android:value=".Admin_Inicio" />
         </activity>
-        <activity android:name=".Admin_Inicio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Admin_Inicio"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".AdminMateriasCatalogoActivity"
             android:parentActivityName=".Admin_Materias_Menu">
@@ -84,7 +81,21 @@
                 android:value=".Admin_AntesGTGL" />
         </activity>
         <activity android:name=".AdminAlumnoActualizarActivity" />
-        <activity android:name=".AdminAlumnoNuevoActivity"></activity>
+        <activity android:name=".AdminAlumnoNuevoActivity"/>
+
+        <activity android:name=".Alumno_Menu"/>
+
+        <activity android:name=".Alumno_Materia">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Alumno_Inscripcion"/>
+        <activity android:name=".Alumno_diferido"/>
+        <activity android:name=".Alumno_Asistencia"/>
     </application>
 
 </manifest>

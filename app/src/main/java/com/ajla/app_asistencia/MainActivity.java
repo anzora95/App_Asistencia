@@ -238,14 +238,14 @@ public class MainActivity extends AppCompatActivity {
 
             jefe = new Jefe_Departamento(null, null, null, null);
             jefe.setIsss(cursor.getString(1));
-            jefe.setContra_jefe(cursor.getString(3));
+            jefe.setContraseña(cursor.getString(3));
             ls_jefe.add(jefe);
 
         }
 
         for(Jefe_Departamento boss:ls_jefe){
 
-            if (boss.getContra_jefe().equals(p) && boss.getIsss().equals(n)){
+            if (boss.getContraseña().equals(p) && boss.getIsss().equals(n)){
 
                 cursor.close();
                 bandera=true;
