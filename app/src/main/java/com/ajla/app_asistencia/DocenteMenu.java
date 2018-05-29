@@ -53,6 +53,7 @@ public class DocenteMenu extends AppCompatActivity{
                 String valor= puente;
                 Intent nuevoformulario= new Intent(DocenteMenu.this,DocenteMateria.class);
                 nuevoformulario.putExtra("codmateria",valor);
+                nuevoformulario.putExtra("otronombre",codigoisss);
                 startActivity(nuevoformulario);
                 }
                 });
@@ -66,6 +67,7 @@ public class DocenteMenu extends AppCompatActivity{
                 String valor= puente;
                 Intent nuevoformulario= new Intent(DocenteMenu.this,DocenteLabActivity.class);
                 nuevoformulario.putExtra("codmaterialabsdoce",valor);
+                nuevoformulario.putExtra("otronombre2",codigoisss);
                 startActivity(nuevoformulario);
 
 

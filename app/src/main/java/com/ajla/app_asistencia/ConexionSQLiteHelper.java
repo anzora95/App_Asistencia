@@ -261,7 +261,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO alumno values ('MG14006', 'Lilian Patricia', 'Martinez Galdamez', 'prueba')");
         db.execSQL("INSERT INTO alumno values ('MM14006', 'Lilian Patricia', 'Martinez Galdamez', 'pru')");
         db.execSQL("INSERT INTO docente values ('123456789','Eduardo José','Recinos Merino','sobri')");
-        db.execSQL("INSERT INTO docente values ('456789908','Ing.Bladimir','Día Campos','contra1')");
+        db.execSQL("INSERT INTO docente values ('456789908','Ing.Bladimir','Día Campos','contra1')");//este
         db.execSQL("INSERT INTO docente values ('678234042','Ing. Elmer','Carballo','contra2')");
         db.execSQL("INSERT INTO docente values ('908756789','Lic. Guillermo','Mejía','contra3')");
         db.execSQL("INSERT INTO area values('12','Administración')");
@@ -291,8 +291,17 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO oferta_lab values (null,'LCOM4',2,'456789908','GL1')");
         db.execSQL("INSERT INTO oferta_lab values (null,'LCOM4',1,'456789908','GL2')");
         db.execSQL("INSERT INTO asis_lab VALUES ('2018-05-29',1)");
+
         db.execSQL("INSERT INTO inscripcion_lab VALUES (null,'MM14006')");
         db.execSQL("INSERT INTO control_lab VALUES('2018-05-29',1,'0')");
+
+        db.execSQL("INSERT INTO asis_teo VALUES ('2018-05-29',1)");
+
+        db.execSQL("INSERT INTO inscripcion_teo VALUES (null,'MM14006')");
+        db.execSQL("INSERT INTO control_teo VALUES('2018-05-29',1,'0')");
+
+
+
 
 
 

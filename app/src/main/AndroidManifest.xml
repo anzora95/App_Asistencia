@@ -39,7 +39,7 @@
         <activity android:name=".DocenteEvaluacion" />
         <activity android:name=".DocenteAsistenciaGL" />
         <activity android:name=".DocenteAsistenciaEVA" />
-        <activity android:name=".AdminAsignarMaterias">
+        <activity android:name=".AdminAsignarMaterias"/>
 
         <activity
             android:name=".Admin_Materias_Menu"
@@ -123,7 +123,7 @@
         <activity android:name=".Alumno_Inscripcion"/>
         <activity android:name=".Alumno_diferido"/>
         <activity android:name=".Alumno_Asistencia"/>
-        <activity android:name=".AdminAlumnoNuevoActivity" />
+
         <activity android:name=".DocenteLabActivity"></activity>
     </application>
 

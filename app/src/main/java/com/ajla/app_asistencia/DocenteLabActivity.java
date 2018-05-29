@@ -24,7 +24,7 @@ public class DocenteLabActivity extends AppCompatActivity {
     ArrayList<String> lmateinfolab;
     ConexionSQLiteHelper conec;
     String codigo;
-    String issslogin = "456789908";
+    String issslogin ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,9 @@ public class DocenteLabActivity extends AppCompatActivity {
 
         Bundle listav = getIntent().getExtras();
         codigo = listav.getString("codmaterialabsdoce");
+        issslogin=listav.getString("otronombre2");
+
+
 
 
         textogl = (TextView) findViewById(R.id.gl);

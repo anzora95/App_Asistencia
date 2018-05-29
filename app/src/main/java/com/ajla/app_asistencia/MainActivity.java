@@ -274,6 +274,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent inte_jefe = new Intent(MainActivity.this,jefeMenu.class);
         inte_jefe.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        inte_jefe.putExtra("nombre",edt_nom.getText().toString());
         startActivity(inte_jefe);
 
 

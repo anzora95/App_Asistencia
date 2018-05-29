@@ -39,7 +39,7 @@ public class DocenteMateria extends AppCompatActivity {
     ArrayList<String> lmateinfoteo;
     ArrayList<String> lmateinfolab;
 
-    String issslogin = "456789908";
+    String issslogin ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class DocenteMateria extends AppCompatActivity {
 
         Bundle listav = getIntent().getExtras();
         codigo = listav.getString("codmateria");
+        issslogin=listav.getString("otronombre");
 
         textogt = (TextView) findViewById(R.id.gt);
 
@@ -71,7 +72,7 @@ public class DocenteMateria extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent nuevoformulario = new Intent(DocenteMateria.this, DocenteAsistenciaGT.class);
                 valor =grupoteorico.get(i).getId_ofer_teo();
-                nuevoformulario.putExtra("Mate", valor);
+                nuevoformulario.putExtra("Mate5", valor);
                 startActivity(nuevoformulario);
             }
         });
