@@ -25,19 +25,6 @@
 
 
 
-    <TextView
-        android:id="@+id/eva"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="@string/Textoevaluaciones"/>
-
-    <ListView
-        android:id="@+id/listaeva"
-        android:layout_width="wrap_content"
-        android:layout_height="10dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="204dp"/>
-
     <Button
         android:id="@+id/botonasignar"
         android:layout_width="wrap_content"

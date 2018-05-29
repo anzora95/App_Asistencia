@@ -26,11 +26,16 @@ public class jefeMenu extends AppCompatActivity {
     ArrayList<Materia> listadoMate;
     String cod_oferta;
 
+    String codigoisss;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jefe_menu);
+        Bundle listav = getIntent().getExtras();
+        codigoisss = listav.getString("nombre");
+
         texto=findViewById(R.id.textView);
 
 
@@ -64,7 +69,7 @@ public class jefeMenu extends AppCompatActivity {
 
         Materia materiaO;
 ///aqui modificar
-        String sql ="Select * from materia inner join area on materia.cod_area=area.cod_area inner join jefe_departamento on jefe_departamento.cod_area= area.cod_area inner join oferta_materia on materia.cod_materia = oferta_materia.cod_materia inner join ciclo on oferta_materia.ciclo_anio= ciclo.ciclo_anio where ciclo.estado_ciclo= '1' and jefe_departamento.isss=='456789908'";
+        String sql ="Select * from materia inner join area on materia.cod_area=area.cod_area inner join jefe_departamento on jefe_departamento.cod_area= area.cod_area inner join oferta_materia on materia.cod_materia = oferta_materia.cod_materia inner join ciclo on oferta_materia.ciclo_anio= ciclo.ciclo_anio where ciclo.estado_ciclo= '1' and jefe_departamento.isss='"+codigoisss+"'";
 
         Cursor cursor =db.rawQuery(sql,null);
         listadoMate = new ArrayList<Materia>();

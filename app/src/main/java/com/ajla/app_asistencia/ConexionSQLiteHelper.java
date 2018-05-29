@@ -272,20 +272,27 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO lugar values('LCOM4',20,'L')");
         db.execSQL("INSERT INTO materia values('PDM115','45','Progración para dispositivos móviles')");
         db.execSQL("INSERT INTO materia values('HDP115','45','Herramientas de productividad')");
+        db.execSQL("INSERT INTO materia values('IAI115','23','Introduccion a la informatica')");
         db.execSQL("INSERT INTO jefe_departamento values('23','678234042','014-018','je1')");
         db.execSQL("INSERT INTO jefe_departamento values('45','456789908','014-018','je2')");
         db.execSQL("INSERT INTO jefe_departamento values('67','908756789','014-018','je3')");
         db.execSQL("INSERT INTO ciclo values ( '1',1,'1')");
         db.execSQL("INSERT INTO oferta_materia values (1,'PDM115','123456789','1')");
         db.execSQL("INSERT INTO oferta_materia values (null,'HDP115','123456789','1')");
+        db.execSQL("INSERT INTO oferta_materia values (null,'IAI115','123456789','1')");
         db.execSQL("INSERT INTO asis_exam values('2017-07-01',1,'EP1')");
         db.execSQL("INSERT INTO asis_exam values('2017-07-02',2,'EP1')");
+
         db.execSQL("INSERT INTO solicitud_diferido values(1,'MG14006','456789908','014-018','2017-07-01',0)");
+        db.execSQL("INSERT INTO solicitud_diferido values(null,'MG14006','678234042','014-018','2018-05-29',0)");
         db.execSQL("INSERT INTO solicitud_diferido values(null,'MM14006','456789908','014-018','2017-07-02',0)");
         db.execSQL("INSERT INTO oferta_teo values(null,'F1312',1,'456789908','GT1')");
         db.execSQL("INSERT INTO oferta_teo values(null,'F1312',1,'456789908','GT2')");
         db.execSQL("INSERT INTO oferta_lab values (null,'LCOM4',2,'456789908','GL1')");
         db.execSQL("INSERT INTO oferta_lab values (null,'LCOM4',1,'456789908','GL2')");
+        db.execSQL("INSERT INTO asis_lab VALUES ('2018-05-29',1)");
+        db.execSQL("INSERT INTO inscripcion_lab VALUES (null,'MM14006')");
+        db.execSQL("INSERT INTO control_lab VALUES('2018-05-29',1,'0')");
 
 
 

@@ -20,7 +20,7 @@ public class DocenteLabActivity extends AppCompatActivity {
     ListView listagl;
     TextView textogl;
     ArrayList<Oferta_Lab> grupolab;
-    Integer valor;
+    String valor;
     ArrayList<String> lmateinfolab;
     ConexionSQLiteHelper conec;
     String codigo;
@@ -49,8 +49,8 @@ public class DocenteLabActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent nuevoformulario = new Intent(DocenteLabActivity.this, DocenteAsistenciaGL.class);
-                valor =grupolab.get(i).getId_ofer_lab();
-                nuevoformulario.putExtra("Mate", valor);
+                valor =grupolab.get(i).getId_ofer_lab().toString();
+                nuevoformulario.putExtra("Mateasislab", valor);
                 startActivity(nuevoformulario);
             }
         });

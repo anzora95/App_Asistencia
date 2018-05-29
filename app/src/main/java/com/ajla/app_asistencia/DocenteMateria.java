@@ -47,8 +47,6 @@ public class DocenteMateria extends AppCompatActivity {
         setContentView(R.layout.activity_docente_materia);
 
 
-
-
         Bundle listav = getIntent().getExtras();
         codigo = listav.getString("codmateria");
 
@@ -56,10 +54,6 @@ public class DocenteMateria extends AppCompatActivity {
 
         listagt = (ListView) findViewById(R.id.listagt);
 
-
-        textoeva = (TextView) findViewById(R.id.eva);
-
-        listaeva = (ListView) findViewById(R.id.listaeva);
 
         botonasignar = (Button) findViewById(R.id.botonasignar);
 
@@ -70,7 +64,7 @@ public class DocenteMateria extends AppCompatActivity {
 
         ArrayAdapter<String> adaptergt = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, lmateinfoteo);
 
-       //ArrayAdapter<String> adaptereva = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, valoreseva);
+
         listagt.setAdapter(adaptergt);
         listagt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -82,41 +76,6 @@ public class DocenteMateria extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-        //listaeva.setAdapter(adaptereva);
-        listaeva.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent nuevoformulario = new Intent(DocenteMateria.this, DocenteAsistenciaEVA.class);
-                //NUEVO INTENT PARA QUE ME LLEVE A PANTALLAS DE GT, GL Y EVA
-
-                //nuevoformulario.putExtra("Materias", valor);
-                startActivity(nuevoformulario);
-            }
-        });
-
-
-
-
-
-        //para que el boton lo lleve a otra pantalla
-        botonasignar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(docente==coordinador) {
-                    Intent siguientepantalla = new Intent(DocenteMateria.this, DocenteEvaluacion.class);
-                    startActivity(siguientepantalla);
-                }
-                else{
-                    Toast.makeText(DocenteMateria.this,"no es coordinador",Toast.LENGTH_LONG).show();
-                }
-
-            }
-        }   );
     }
 
     private void consultarlistagruposteoricos() {
