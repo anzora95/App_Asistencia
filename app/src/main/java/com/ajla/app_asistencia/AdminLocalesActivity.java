@@ -15,7 +15,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.ajla.app_asistencia.Entidades.Alumno;
 import com.ajla.app_asistencia.Entidades.Lugar;
+import com.ajla.app_asistencia.Entidades.VolleySingleton;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -28,6 +38,7 @@ public class AdminLocalesActivity extends AppCompatActivity {
     String puente;
     String cod_luagar,tipo;
     Integer capa;
+    JsonObjectRequest jsonObjectRequest;
 
 
     @Override
@@ -40,12 +51,11 @@ public class AdminLocalesActivity extends AppCompatActivity {
 
         conn = new ConexionSQLiteHelper(getApplicationContext());
         listLocales = (ListView) findViewById(R.id.listLocales);
-        consultarListaLocales();
 
 
+        
 
-        ArrayAdapter adaptado= new ArrayAdapter(this,android.R.layout.simple_list_item_1,lsLo);
-        listLocales.setAdapter(adaptado);
+
         listLocales.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -139,5 +149,8 @@ public class AdminLocalesActivity extends AppCompatActivity {
             }
 
 
-        }
+
+
+
+}
 

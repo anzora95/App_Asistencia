@@ -17,10 +17,24 @@ import android.widget.Toast;
 
 import com.ajla.app_asistencia.Entidades.Alumno;
 import com.ajla.app_asistencia.Entidades.Docente;
+import com.ajla.app_asistencia.Entidades.VolleySingleton;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.DataOutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class AdminAlumnoActivity extends AppCompatActivity {
+public class AdminAlumnoActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener{
 
     ListView listViewAlumnos;
     ConexionSQLiteHelper conec;
@@ -29,6 +43,11 @@ public class AdminAlumnoActivity extends AppCompatActivity {
     String puen;
     String tv_carnet,tv_nombre,tv_apellido,tv_contraseña;
     ArrayAdapter adaptado;
+    JsonObjectRequest jsonObjectRequest;
+    StringRequest stringRequest;//SE MODIFICA
+
+
+
 
 
     @Override
@@ -40,17 +59,14 @@ public class AdminAlumnoActivity extends AppCompatActivity {
         ActionBar action=getSupportActionBar();
         action.setDisplayHomeAsUpEnabled(true);
 
-        conec= new ConexionSQLiteHelper(getApplicationContext());
+
 
         listViewAlumnos = (ListView) findViewById(R.id.listalumno);
 
 
-        consultarlistaalumno();
+        cagarwebservice();
 
 
-
-        adaptado = new ArrayAdapter(this,android.R.layout.simple_list_item_1,laluminfo);
-        listViewAlumnos.setAdapter(adaptado);
 
         listViewAlumnos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -90,22 +106,13 @@ public class AdminAlumnoActivity extends AppCompatActivity {
                 tv_contraseña =listaalumno.get(i).getContra_alum();
 
 
-
-                Intent lista = new Intent(AdminAlumnoActivity.this, AdminAlumnoActualizarActivity.class);  //Onda del video
-                lista.putExtra("carnetac",tv_carnet);
-                lista.putExtra("nomAlumac",tv_nombre);
-                lista.putExtra("apeAlumac",tv_apellido);
-                lista.putExtra("contrAlumac",tv_contraseña);
-                startActivity(lista);
-
             }
         });
 
     }
 
     private void aceptar() {
-        SQLiteDatabase db=conec.getWritableDatabase();
-        db.execSQL("Delete from alumno where carnet='"+puen+"'");
+        webServiceEliminar();
         Toast.makeText(this,"Registro eliminado", Toast.LENGTH_SHORT).show();
         Intent P= new Intent(this,AdminAlumnoActivity.class);
         startActivity(P);
@@ -115,9 +122,15 @@ public class AdminAlumnoActivity extends AppCompatActivity {
 
     }
 
-    private void consultarlistaalumno() {
+    private void cagarwebservice() {
 
-        SQLiteDatabase db=conec.getReadableDatabase();
+        String url = "https://pdmconsumo.000webhostapp.com/consultarAlumno.php";// string el cual vamos a ponr la url a enviar
+
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+
+        VolleySingleton.getIntanciaVolley(getApplicationContext()).addToRequestQueue(jsonObjectRequest);
+
+        /*SQLiteDatabase db=conec.getReadableDatabase();
 
         Alumno doce;
         listaalumno = new ArrayList<Alumno>();
@@ -131,11 +144,11 @@ public class AdminAlumnoActivity extends AppCompatActivity {
             doce.setContra_alum(cursor.getString(3));
 
 
-            listaalumno.add(doce);
-
+            listaalumno.add(doce);*/
+        //obtenerlista();
         }
-        obtenerlista();
-    }
+
+
 
     private void obtenerlista() {
         laluminfo=new ArrayList<String>();
@@ -152,5 +165,87 @@ public class AdminAlumnoActivity extends AppCompatActivity {
         startActivity(lista);
 
 
+    }
+
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(getApplicationContext(), "No se puede conectar ",Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+
+        Alumno alumno=null;
+        listaalumno=new ArrayList<>();
+
+        JSONArray json=response.optJSONArray("Nombre");
+
+        try {
+
+            for (int i=0;i<json.length();i++){
+                alumno=new Alumno();
+                JSONObject jsonObject=null;
+                jsonObject=json.getJSONObject(i);
+
+                alumno.setCarnet(jsonObject.optString("CARNET"));
+                alumno.setNom_alum(jsonObject.optString("NOM_ALUM"));
+                alumno.setApel_alum(jsonObject.optString("APEL_ALUM"));
+                alumno.setContra_alum(jsonObject.optString("CONTRA_ALUM"));
+                listaalumno.add(alumno);
+            }
+
+            obtenerlista();
+
+            adaptado = new ArrayAdapter(this,android.R.layout.simple_list_item_1,laluminfo);
+            listViewAlumnos.setAdapter(adaptado);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "No se ha podido establecer conexión con el servidor" +
+                    " "+response, Toast.LENGTH_LONG).show();
+
+        }
+
+    }
+
+    private void webServiceEliminar() {
+
+
+
+
+        String url="https://pdmconsumo.000webhostapp.com/ws_eliminar_alumno.php?carnet="+puen; //String con el url de el servicio web a consumir hacer otro web service para consumir con un request del carnet
+
+        stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+
+                if (response.trim().equalsIgnoreCase("elimina")){
+
+
+                    Toast.makeText(getApplicationContext(),"Se ha Eliminado con exito",Toast.LENGTH_SHORT).show();
+                }else{
+                    if (response.trim().equalsIgnoreCase("noExiste")){
+                        Toast.makeText(getApplicationContext(),"No se encuentra la persona ",Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        Toast.makeText(getApplicationContext(),"No se ha Eliminado ",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),"No se ha podido conectar",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        //request.add(stringRequest);
+        VolleySingleton.getIntanciaVolley(getApplicationContext()).addToRequestQueue(stringRequest);
     }
 }
