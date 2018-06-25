@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class Solicitud_Diferido implements Serializable{
 
- private Integer id_solicitud;
+ private String id_solicitud;
  private String estado;
  private String carnet;
  private String isss;
@@ -27,7 +27,7 @@ public class Solicitud_Diferido implements Serializable{
     public Solicitud_Diferido() {
     }
 
-    public Solicitud_Diferido(Integer id_solicitud, String estado, String carnet, String isss, String periodo) {
+    public Solicitud_Diferido(String id_solicitud, String estado, String carnet, String isss, String periodo) {
         this.id_solicitud = id_solicitud;
         this.estado = estado;
         this.carnet = carnet;
@@ -67,11 +67,11 @@ public class Solicitud_Diferido implements Serializable{
         this.periodo = periodo;
     }
 
-    public Integer getId_solicitud() {
+    public String getId_solicitud() {
         return id_solicitud;
     }
 
-    public void setId_solicitud(Integer id_solicitud) {
+    public void setId_solicitud(String id_solicitud) {
         this.id_solicitud = id_solicitud;
     }
 

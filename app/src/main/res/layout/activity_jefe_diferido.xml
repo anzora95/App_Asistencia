@@ -45,16 +45,17 @@
         android:layout_height="wrap_content"
         android:text="@string/botonaceptar"
         tools:layout_editor_absoluteX="16dp"
-        android:onClick="onClick"
-        tools:layout_editor_absoluteY="304dp" />
+        tools:layout_editor_absoluteY="304dp"
+        android:onClick="aceptar"/>
 
     <Button
         android:id="@+id/denegardife"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/botondenegar"
-        android:onClick="onClick"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="371dp" />
+        tools:layout_editor_absoluteY="371dp"
+        android:onClick="denegar"/>
+
 
 </LinearLayout>
